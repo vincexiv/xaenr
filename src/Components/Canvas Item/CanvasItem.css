@@ -1,0 +1,7 @@
+.canvas-item {
+    width: calc(var(--one-vh) * 10);
+    height: calc(var(--one-vh) * 10);
+    min-width: 7rem;
+    min-height: 7rem;
+    padding: calc(max(1vw, 1rem));
+}
