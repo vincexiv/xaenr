@@ -12,9 +12,9 @@ function App() {
         {
           [1, 2, 3].map(index => {
             return (
-              <div className='item-and-btn'>
-                  <CanvasItem key={index} index={index}/>
-                  <CanvasItemBtn key={index} index={index} activeCanvas={activeCanvas} setActiveCanvas={setActiveCanvas}/>
+              <div key={`item-&-btn-${index}`} className='item-and-btn'>
+                  <CanvasItem  index={index}/>
+                  <CanvasItemBtn index={index} activeCanvas={activeCanvas} setActiveCanvas={setActiveCanvas}/>
               </div>
             )
           })
@@ -25,7 +25,7 @@ function App() {
         {
           [4, 5, 6].map(index => {
             return (
-                <CanvasItem key={index} index={index}/>
+                <CanvasItem key={`canvas-${index}`} index={index}/>
             )
           })
         }
