@@ -8,10 +8,10 @@ function CanvasItemBtn({index, activeCanvas, setActiveCanvas}){
 
     return (
         <button
-            className={activeCanvas == index? "canvas-item-btn active": "canvas-item-btn"}
+            className={activeCanvas === index? "canvas-item-btn active": "canvas-item-btn"}
             onClick={makeActive}
             >
-            {activeCanvas == index? "Match" : "Match"}
+            {activeCanvas === index? "Match" : "Match"}
         </button>
     )
 }
