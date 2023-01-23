@@ -25,14 +25,21 @@
 
 #canvas-item-1,
 #canvas-item-2,
-#canvas-item-3 {
-    background-color: rgb(240, 240, 240);
-}
-
+#canvas-item-3,
 #canvas-item-4,
 #canvas-item-5,
 #canvas-item-6 {
-    margin: calc(max(1vw,1rem));
     background-color: rgb(240, 240, 240);
+}
 
+.item-and-btn {
+    width: calc((var(--one-vh) * 9)+0.5rem);
+    min-width: 7.5rem;
+    padding: 0.5rem;
+    border: 0.1rem solid rgb(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+}
+
+.item-and-btn.active{
+    background-color: rgb(60, 60, 60);
 }
