@@ -1,0 +1,32 @@
+nav {
+    height: 5rem;
+}
+
+nav .nav-content {
+    height: 100%;
+    width: calc(min(90vw, 90rem));
+    margin: auto;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(240, 240, 240);
+}
+
+.nav-content .actions {
+    display: flex;
+}
+
+#how-to-test-it {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.actions p {
+    padding: 0.8rem;
+    background-color: rgb(180, 0, 0);
+}
+
+.nav-content .item, .company-name {
+    cursor: pointer;
+}
