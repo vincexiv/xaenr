@@ -20,7 +20,6 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    height: max-content;
 }
 
 #canvas-item-1,
@@ -33,8 +32,9 @@
 }
 
 .item-and-btn {
-    width: calc((var(--one-vh) * 9)+0.5rem);
-    min-width: 7.5rem;
+    width: calc((var(--one-vh) * 9)+1rem);
+    min-width: 8rem;
+    height: max-content;
     padding: 0.5rem;
     border: 0.1rem solid rgb(255, 255, 255, 0.3);
     border-radius: 0.5rem;

@@ -16,4 +16,5 @@ body {
   width: calc(min(90vw, 90rem));
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   margin: auto;
+  height: max-content;
 }
