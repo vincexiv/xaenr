@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   --one-vh: 1.2rem;
+  --min-font-size: 11.33px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   /* outline: red solid 0.1rem; */
@@ -21,12 +22,12 @@ body {
 
 @media only screen and (min-width: 1360px){
   :root{
-    font-size: calc(min((1/1.2)*1vw, (1/0.675)*1vh)); 
+    font-size: calc(max(min((1/1.2)*1vw, (1/0.675)*1vh), var(--min-font-size))); 
   }
 }
 
 @media only screen and (max-width: 1360px){
   :root {
-    font-size: 11.33px;
+    font-size: var(--min-font-size);
   }
 }
