@@ -28,7 +28,7 @@ function App() {
           {
             [4, 5, 6].map(index => {
               return (
-                <div key={`item-and-btn-${index}`} className={index == 4 ? 'active item-and-btn': 'item-and-btn'}>
+                <div key={`item-and-btn-${index}`} className={index === 4 ? 'active item-and-btn': 'item-and-btn'}>
                   <CanvasItem index={index}/>
                 </div>
               )
