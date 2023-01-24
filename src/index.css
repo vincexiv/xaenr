@@ -22,7 +22,7 @@ body {
 
 @media only screen and (min-width: 1360px){
   :root{
-    font-size: calc(max(min(1/1.2*1vw, 1/0.675*1vh)), 11.33px); 
+    font-size: calc(max(min(1/1.2*1vw, 1/0.675*1vh), var(--min-font-size))); 
   }
 }
 
