@@ -32,6 +32,10 @@ nav .nav-content {
     background-color: var(--semi-light);
 }
 
+.actions p:hover.active{
+    outline: var(--light-border); 
+}
+
 .actions p.active:not(:hover){
     background-color: var(--semi-light);
     outline: var(--light-border);
