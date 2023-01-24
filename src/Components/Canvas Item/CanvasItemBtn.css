@@ -3,17 +3,23 @@
     outline: none;
     border: none;
     padding: 0.5rem;
-    cursor: pointer;
     border-radius: 0.5rem;
+    background-color: var(--background-dark);
+    color: var(--color-light);
 }
 
-.canvas-item-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+.canvas-item-btn:not(.active){
+    background-color: var(--semi-light);
+    cursor: pointer;
+}
+
+.canvas-item-btn:hover:not(.active) {
+    background-color: var(--semi-light);
+    color: var(--color-light);
+    outline: var(--light-border);
 }
 
 .canvas-item-btn.active {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    background-color: var(--background-dark);
+    color: var(--color-light);
 }

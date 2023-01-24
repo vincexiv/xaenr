@@ -6,11 +6,11 @@ nav .nav-content {
     height: 100%;
     width: calc(min(95vw, 95rem));
     margin: auto;
-    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+    border-bottom: var(--light-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(240, 240, 240);
+    color: var(--color-light);
 }
 
 .nav-content .actions {
@@ -24,7 +24,7 @@ nav .nav-content {
 
 .actions p {
     padding: 0.8rem;
-    background-color: rgb(180, 0, 0);
+    background-color: var(--background-dark-red);
 }
 
 .nav-content .item, .company-name {

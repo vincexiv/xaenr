@@ -4,18 +4,24 @@
   box-sizing: border-box;
   --one-vh: 1.2rem;
   --min-font-size: 11.33px;
+  --light-border: 0.05rem solid rgb(100, 100, 100);
+  --background-dark: rgb(20, 20, 20);
+  --background-light: rgb(240, 240, 240);
+  --color-light: rgb(240, 240, 240);
+  --semi-light: rgb(60, 60, 60);
+  --background-dark-red: rgb(180, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   /* outline: red solid 0.1rem; */
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: var(--background-dark);
 }
 
 .container {
   width: calc(min(95vw, 95rem));
-  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border: var(--light-border);
   margin: auto;
   height: max-content;
 }

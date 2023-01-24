@@ -28,7 +28,7 @@
 #canvas-item-4,
 #canvas-item-5,
 #canvas-item-6 {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--background-light);
 }
 
 .item-and-btn {
@@ -36,10 +36,11 @@
     min-width: 8rem;
     height: max-content;
     padding: 0.5rem;
-    border: 0.1rem solid rgb(255, 255, 255, 0.3);
+    border: var(--light-border);
     border-radius: 0.5rem;
+    background-color: var(--semi-light);
 }
 
 .item-and-btn.active{
-    background-color: rgb(60, 60, 60);
+    background-color: var(--background-dark);
 }
