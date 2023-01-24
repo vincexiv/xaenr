@@ -24,7 +24,17 @@ nav .nav-content {
 
 .actions p {
     padding: 0.8rem;
-    background-color: var(--background-dark-red);
+    border-radius: 0.5rem;
+    /* background-color: var(--background-dark-red); */
+}
+
+.actions p:hover {
+    background-color: var(--semi-light);
+}
+
+.actions p.active:not(:hover){
+    background-color: var(--semi-light);
+    outline: var(--light-border);
 }
 
 .nav-content .item, .company-name {
