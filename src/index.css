@@ -19,8 +19,9 @@ body {
   height: max-content;
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1360px){
   :root{
-    font-size: 0.83vw;
+    font-size: calc(max((1/1.2)*1vw, (1/0.675)*1vh));
+    
   }
 }
