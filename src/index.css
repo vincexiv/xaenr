@@ -13,8 +13,14 @@ body {
 }
 
 .container {
-  width: calc(min(90vw, 90rem));
+  width: calc(min(95vw, 95rem));
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   margin: auto;
   height: max-content;
+}
+
+@media only screen and (min-width: 1000px){
+  :root{
+    font-size: 0.83vw;
+  }
 }

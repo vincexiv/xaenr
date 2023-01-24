@@ -4,7 +4,7 @@ nav {
 
 nav .nav-content {
     height: 100%;
-    width: calc(min(90vw, 90rem));
+    width: calc(min(95vw, 95rem));
     margin: auto;
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
     display: flex;
