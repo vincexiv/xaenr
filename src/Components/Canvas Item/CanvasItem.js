@@ -1,35 +1,61 @@
-import React, {useRef} from "react";
+import React from "react";
 import "./CanvasItem.css"
 
 function CanvasItem({index}){
-    const canvasRef = useRef()
-    let painting = false
 
-    function startPainting(e, ctx){
-        painting = true
+    let drawing = false
 
+    window.addEventListener('load', handleCanvas)  
+
+    function startedDrawing(e, ctx){
+        drawing = true
+        console.log("started drawing")
+        draw(e, ctx)
     }
 
-    function finishPainting(e, ctx){
-        painting = false
+    function finishedDrawing(e, ctx){
+        drawing = false
+        console.log("finishd drawing")
+        ctx.beginPath()
+    }
+
+    function draw(e, ctx){
+        if(!drawing) return 
+
+        console.log('context: ', ctx)
+        console.log("x and y", e.clientX, e.clientY)
+        ctx.lineWidth ='1'
+        ctx.lineCap = 'round'
+        ctx.strokeStyle = 'red'
+        ctx.fillStyle = 'red'
+
+        ctx.lineTo(e.clientX, e.clientY)
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(e.clientX, e.clientY)
     }
 
     function handleCanvas(e){
-        const ctx = canvasRef.current?.getContext('2d')
+        const canv = document.getElementById(`canvas-item-${index}`)
+        let ctx = canv?.getContext('2d')
 
-        canvasRef.current?.addEventListener('mousedown', (e)=>startPainting(e, ctx))
-        canvasRef.current?.addEventListener('mouseup', (e)=>finishPainting(e, ctx))
-        canvasRef.current?.addEventListener('mousemove', ()=>{
-            if(painting){
-                console.log('painting')
-            }
-        })
+        if(ctx){
+            ctx.width =  window.innerHeight * 9/100
+            ctx.height = window.innerHeight * 9/100
+            
+            window.addEventListener('resize', ()=>{
+                ctx.width =  window.innerHeight * 9/100
+                ctx.height = window.innerHeight * 9/100
+            })
+        }
+
+        canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
+        canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
     }
 
-    window.addEventListener('load', handleCanvas)
 
     return (
-        <canvas id={`canvas-item-${index}`} ref={canvasRef} className="canvas-item">
+        <canvas id={`canvas-item-${index}`} className="canvas-item">
 
         </canvas>
     )
