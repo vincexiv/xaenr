@@ -14,9 +14,11 @@
 }
 
 .canvas-item-btn:hover:not(.active) {
-    background-color: var(--semi-light);
+    background-color: var(--background-dark);
     color: var(--color-light);
-    outline: var(--light-border);
+    outline: var(--background-dark);
+    box-shadow: 0 0 2rem var(--background-dark);
+    z-index: 0;
 }
 
 .canvas-item-btn.active {

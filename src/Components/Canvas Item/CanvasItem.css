@@ -4,4 +4,5 @@
     min-width: 7rem;
     min-height: 7rem;
     padding: calc(max(1vw, 1rem));
+    z-index: 1;
 }
