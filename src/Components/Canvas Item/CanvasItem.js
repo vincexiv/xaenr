@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./CanvasItem.css"
 
 function CanvasItem({index}){
-
     let drawing = false
 
     window.addEventListener('load', handleCanvas)  
@@ -22,12 +21,11 @@ function CanvasItem({index}){
     function draw(e, ctx){
         if(!drawing) return 
 
-        console.log('context: ', ctx)
         console.log("x and y", e.clientX, e.clientY)
-        ctx.lineWidth ='1'
+        ctx.lineWidth ='20'
         ctx.lineCap = 'round'
-        ctx.strokeStyle = 'red'
-        ctx.fillStyle = 'red'
+        ctx.strokeStyle = 'black'
+        ctx.fillStyle = 'black'
 
         ctx.lineTo(e.clientX, e.clientY)
         ctx.stroke()
@@ -40,17 +38,21 @@ function CanvasItem({index}){
         let ctx = canv?.getContext('2d')
 
         if(ctx){
-            ctx.width =  window.innerHeight * 9/100
-            ctx.height = window.innerHeight * 9/100
+            ctx.width =  canv?.offsetWidth
+            ctx.height = canv?.offsetHeight
             
             window.addEventListener('resize', ()=>{
-                ctx.width =  window.innerHeight * 9/100
-                ctx.height = window.innerHeight * 9/100
+                ctx.width =  canv?.offsetWidth
+                ctx.height = canv?.offsetHeight
             })
         }
 
+        // console.log("canvas Ref width", canvasRef.current?.offsetWidth)
+        // console.log("canvas Ref Height", canvasRef.current?.offsetHeight)
+
         canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
         canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
+        canv.addEventListener('mousemove', (e)=>draw(e, ctx))
     }
 
 
