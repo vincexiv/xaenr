@@ -1,4 +1,4 @@
-.canvas-item-btn {
+.sample-item-btn {
     margin-top: 0.7rem;
     outline: none;
     border: none;
@@ -8,12 +8,12 @@
     color: var(--color-light);
 }
 
-.canvas-item-btn:not(.active){
+.sample-item-btn:not(.active){
     background-color: var(--semi-light);
     cursor: pointer;
 }
 
-.canvas-item-btn:hover:not(.active) {
+.sample-item-btn:hover:not(.active) {
     background-color: var(--background-dark);
     color: var(--color-light);
     outline: var(--background-dark);
@@ -21,7 +21,7 @@
     z-index: 0;
 }
 
-.canvas-item-btn.active {
+.sample-item-btn.active {
     background-color: var(--background-dark);
     color: var(--color-light);
 }

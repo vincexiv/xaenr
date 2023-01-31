@@ -1,35 +1,35 @@
 import './App.css';
 import React, {useState} from 'react'
-import CanvasItem from './Components/Canvas Item/CanvasItem';
-import CanvasItemBtn from './Components/Canvas Item/CanvasItemBtn';
+import SampleItem from './Components/Canvas Item/SampleItem';
+import SampleItemBtn from './Components/Canvas Item/SampleItemBtn';
 import Navbar from './Components/Navbar/Navbar';
 
 function App() {
-  const [activeCanvas, setActiveCanvas] = useState(1)
+  const [activeSample, setActiveSample] = useState(1)
 
   return (
     <>
       <Navbar />
       <div className='container main-body'>
-        <div className='canvas-items'>
+        <div className='sample-items'>
           {
             [1, 2, 3].map(index => {
               return (
-                <div key={`item-and-btn-${index}`} className={activeCanvas ===+ index? 'active item-and-btn': 'item-and-btn'}>
-                    <CanvasItem  index={index}/>
-                    <CanvasItemBtn index={index} activeCanvas={activeCanvas} setActiveCanvas={setActiveCanvas}/>
+                <div key={`item-and-btn-${index}`} className={activeSample ===+ index? 'active item-and-btn': 'item-and-btn'}>
+                    <SampleItem  index={index}/>
+                    <SampleItemBtn index={index} activeSample={activeSample} setActiveSample={setActiveSample}/>
                 </div>
               )
             })
           }
         </div>
 
-        <div className='canvas-items'>
+        <div className='sample-items'>
           {
             [4, 5, 6].map(index => {
               return (
                 <div key={`item-and-btn-${index}`} className={index === 4 ? 'active item-and-btn': 'item-and-btn'}>
-                  <CanvasItem index={index}/>
+                  <SampleItem index={index}/>
                 </div>
               )
             })

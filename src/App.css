@@ -1,4 +1,4 @@
-.canvas-items {
+.sample-items {
     display: flex;
 }
 
@@ -22,12 +22,12 @@
     flex-direction: column;
 }
 
-#canvas-item-1,
-#canvas-item-2,
-#canvas-item-3,
-#canvas-item-4,
-#canvas-item-5,
-#canvas-item-6 {
+#sample-item-1,
+#sample-item-2,
+#sample-item-3,
+#sample-item-4,
+#sample-item-5,
+#sample-item-6 {
     background-color: var(--background-light);
 }
 
