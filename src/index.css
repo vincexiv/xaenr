@@ -22,10 +22,17 @@ body {
 }
 
 .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: calc(min(95vw, 95rem));
   border: var(--light-border);
   margin: auto;
   height: max-content;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media only screen and (min-width: 1360px){

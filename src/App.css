@@ -13,11 +13,7 @@
     background-color: transparent;
 }
 
-.main-body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.sample-items-body {
     display: flex;
     flex-direction: column;
 }
