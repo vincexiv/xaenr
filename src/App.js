@@ -12,7 +12,9 @@ function App() {
     <>
       <Navbar />
       <div className='container'>
-        <Canvas />
+        <div className='canvas-item-container'>
+          <Canvas />
+        </div>
         <div className='sample-items-body'>
           <div className='sample-items'>
             {

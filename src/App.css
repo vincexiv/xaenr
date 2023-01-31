@@ -40,3 +40,8 @@
 .item-and-btn.active{
     background-color: var(--background-dark);
 }
+
+.canvas-item-container {
+    display: grid;
+    place-items: center;
+}

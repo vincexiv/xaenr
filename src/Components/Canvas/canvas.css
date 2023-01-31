@@ -1,0 +1,5 @@
+#canvas-item {
+    background-color: var(--background-light);
+    height: 25rem;
+    width: 25rem;
+}
