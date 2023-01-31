@@ -1,27 +1,47 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import "./CanvasItem.css"
 
 function CanvasItem({index}){
     let drawing = false
+    const canvasRef = useRef()
 
-    window.addEventListener('load', handleCanvas)  
+    useEffect(()=>{
+        const canv = canvasRef.current
+        let ctx = canv.getContext('2d')
+
+        window.addEventListener('resize', ()=>{
+            canv.width =  window.innerWidth * 0.09
+            canv.height = window.innerWidth * 0.09
+        })
+
+        // console.log("canvas Ref width", canvasRef.current?.offsetWidth)
+        // console.log("canvas Ref Height", canvasRef.current?.offsetHeight)
+
+        canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
+        canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
+        canv.addEventListener('mousemove', (e)=>draw(e, ctx))
+    })
 
     function startedDrawing(e, ctx){
         drawing = true
         console.log("started drawing")
         draw(e, ctx)
+        console.log("e: ", e)
     }
 
     function finishedDrawing(e, ctx){
         drawing = false
         console.log("finishd drawing")
         ctx.beginPath()
+        console.log(canvasRef.current.toDataURL())
+
     }
 
     function draw(e, ctx){
         if(!drawing) return 
 
         console.log("x and y", e.clientX, e.clientY)
+
         ctx.lineWidth ='20'
         ctx.lineCap = 'round'
         ctx.strokeStyle = 'black'
@@ -33,33 +53,8 @@ function CanvasItem({index}){
         ctx.moveTo(e.clientX, e.clientY)
     }
 
-    function handleCanvas(e){
-        const canv = document.getElementById(`canvas-item-${index}`)
-        let ctx = canv?.getContext('2d')
-
-        if(ctx){
-            ctx.width =  canv?.offsetWidth
-            ctx.height = canv?.offsetHeight
-            
-            window.addEventListener('resize', ()=>{
-                ctx.width =  canv?.offsetWidth
-                ctx.height = canv?.offsetHeight
-            })
-        }
-
-        // console.log("canvas Ref width", canvasRef.current?.offsetWidth)
-        // console.log("canvas Ref Height", canvasRef.current?.offsetHeight)
-
-        canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
-        canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
-        canv.addEventListener('mousemove', (e)=>draw(e, ctx))
-    }
-
-
     return (
-        <canvas id={`canvas-item-${index}`} className="canvas-item">
-
-        </canvas>
+        <canvas ref={canvasRef} id={`canvas-item-${index}`} className="canvas-item"/>
     )
 }
 
