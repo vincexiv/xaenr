@@ -47,8 +47,8 @@ function Canvas(){
     function draw(e, ctx){
         if(!drawing) return 
         const rect = ctx.canvas.getBoundingClientRect()
-        const x = e.pageX - rect.left
-        const y = e.pageY - rect.top;
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top;
 
         console.log("x and y", x, y)
 
@@ -69,7 +69,7 @@ function Canvas(){
 
     return (
         <div>
-            <canvas id='canvas-item' ref={canvasRef}/>
+            <canvas id='canvas-item' ref={canvasRef} width="276" height="276"/>
             <div className='buttons'>
                 <button className='btn' onClick={clearCanvas}>Clear</button>
                 <button className='btn'>Add</button>
