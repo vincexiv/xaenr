@@ -3,7 +3,11 @@ import "./SampleItemBtn.css"
 
 function SampleItemBtn({index, status, setStatus}){
     function makeActive(){
-        setStatus(status => ({...status, activeSample: index}))
+        if(status.activeSample !== index){
+            setStatus(status => ({...status, activeSample: index}))
+        }else{
+            setStatus(status => ({...status, activeSample: null}))
+        }
     }
 
     return (

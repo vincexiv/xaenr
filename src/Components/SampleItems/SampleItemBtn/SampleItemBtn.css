@@ -8,7 +8,7 @@
     color: var(--color-light);
 }
 
-.sample-item-btn:not(.active){
+.sample-item-btn{
     background-color: var(--semi-light);
     cursor: pointer;
 }
@@ -17,8 +17,11 @@
     background-color: var(--background-dark);
     color: var(--color-light);
     outline: var(--background-dark);
-    box-shadow: 0 0 2rem var(--background-dark);
     z-index: 0;
+}
+
+.sample-item-btn:hover.active {
+    background-color: var(--semi-light);
 }
 
 .sample-item-btn.active {
