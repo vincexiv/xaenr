@@ -32,6 +32,9 @@ function App() {
             status={status}
             setStatus={setStatus}/>
 
+          <div className='start-match-container'>
+          </div>
+
           <SampleItems
             images={[1, 2, 3]}
             sampleType="results"

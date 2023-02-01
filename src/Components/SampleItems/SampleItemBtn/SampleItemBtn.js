@@ -11,7 +11,7 @@ function SampleItemBtn({index, status, setStatus}){
             className={status.activeSample === index? "sample-item-btn active": "sample-item-btn"}
             onClick={makeActive}
             >
-            {status.activeSample === index? "Match" : "Match"}
+            {status.activeSample === index? "Selected" : "Select"}
         </button>
     )
 }

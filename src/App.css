@@ -1,16 +1,8 @@
-.sample-items-container {
+.sample-items-container,
+.options-container,
+.options-container .match-options {
     display: flex;
     flex-direction: column;
-}
-
-.item-and-btn {
-    width: calc((var(--one-vh) * 9)+1rem);
-    min-width: 8rem;
-    height: max-content;
-    padding: 0.5rem;
-    border: var(--light-border);
-    border-radius: 0.5rem;
-    background-color: var(--semi-light);
 }
 
 .canvas-item-container {
@@ -18,12 +10,11 @@
     place-items: center;
 }
 
-.options-container {
+.start-match-container {
     display: flex;
-    flex-direction: column;
-}
-
-.options-container .match-options {
-    display: flex;
-    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: 2rem;
+    background-color: rgba(128, 0, 128, 0.3);
+    border-radius: 1rem;
 }
