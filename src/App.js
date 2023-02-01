@@ -10,12 +10,14 @@ function App() {
     activeSample: null,
     sampleImages: [1, 2, 3],
     resultImages: [1, 2],
-    painting: false
+    painting: true
   })
 
   function togglePainting(){
     setStatus(status => ({...status, painting: !status.painting}))
   }
+
+  console.log("status: ", status)
 
   return (
     <>
@@ -25,7 +27,7 @@ function App() {
         {
           status.painting? (
             <div className='canvas-item-container'>
-              <Canvas />
+              <Canvas status={status} setStatus={setStatus}/>
             </div>
           ) : (
             <div className='options-container'>

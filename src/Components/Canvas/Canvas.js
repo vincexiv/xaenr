@@ -1,10 +1,11 @@
 import React, {useRef, useEffect, useState} from 'react'
 import "./canvas.css"
 
-function Canvas(){
+function Canvas({status, setStatus}){
     let drawing = false
     const canvasRef = useRef()
-    const [remSize, setRemSize] = useState(12)
+    const [remSize, setRemSize] = useState(parseFloat(getComputedStyle(document.documentElement).fontSize))
+    const [image, setImage] = useState("")
 
     useEffect(()=>{
         const canv = canvasRef.current
@@ -37,6 +38,7 @@ function Canvas(){
         // console.log(canvasRef.current.toDataURL())
         // console.log(ctx.canvas)
         // ctx.strokeRect(20, 20, 40, 40)
+        setImage(canvasRef.current.toDataURL())
     }
 
     function draw(e, ctx){
@@ -62,12 +64,20 @@ function Canvas(){
         canvasRef.current.getContext('2d').clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
     }
 
+    function addImageToSample(){
+        const sampleImages = status.sampleImages
+        sampleImages.shift()
+        sampleImages.push(image)
+        setStatus(status => ({...status, sampleImages: sampleImages}))
+        clearCanvas()
+    }
+
     return (
         <div>
             <canvas id='canvas-item' ref={canvasRef} width={remSize*24} height={remSize*24}/>
             <div className='buttons'>
                 <button className='btn' onClick={clearCanvas}>Clear</button>
-                <button className='btn'>Add</button>
+                <button className='btn' onClick={addImageToSample}>Add</button>
             </div>
         </div>
     )

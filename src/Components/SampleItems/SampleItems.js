@@ -18,10 +18,11 @@ function SampleItems({images, sampleType, status, setStatus}){
                             'item-and-btn'
                         }>
 
-                            <div
+                            <img
                                 id={`${sampleType}-${index}`}
-                                className="sample-item">
-                                </div>
+                                className="sample-item"
+                                src={image}
+                                alt="sample"/>
 
                             {
                                 sampleType === "sample"? (
