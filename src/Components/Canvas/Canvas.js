@@ -62,6 +62,7 @@ function Canvas({status, setStatus}){
 
     function clearCanvas(){
         canvasRef.current.getContext('2d').clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
+        setImage("")
     }
 
     function addImageToSample(){
