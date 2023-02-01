@@ -12,7 +12,7 @@
   --background-dark-red: rgb(180, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  outline: red solid 0.1rem;
+  /* outline: red solid 0.1rem; */
 }
 
 body {

@@ -45,3 +45,13 @@
     display: grid;
     place-items: center;
 }
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.options-container .match-options {
+    display: flex;
+    flex-direction: column;
+}
