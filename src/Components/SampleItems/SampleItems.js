@@ -17,22 +17,28 @@ function SampleItems({images, sampleType, status, setStatus}){
                             'active item-and-btn ':
                             'item-and-btn'
                         }>
-
-                            <img
-                                id={`${sampleType}-${index}`}
-                                className="sample-item"
-                                src={image}
-                                alt="sample"/>
-
                             {
                                 sampleType === "sample"? (
-                                    <SampleItemBtn
-                                    index={index}
-                                    status={status}
-                                    setStatus={setStatus}/>
-                                ) : ""
-                            }
+                                    <>
+                                        <img
+                                        id={`${sampleType}-${index}`}
+                                        className="sample-item"
+                                        src={image}
+                                        alt="no image added yet. Please paint something in the canvas then click 'add'"/>
 
+                                        <SampleItemBtn
+                                        index={index}
+                                        status={status}
+                                        setStatus={setStatus}/>
+                                    </>
+                                ): (
+                                    <img
+                                    id={`${sampleType}-${index}`}
+                                    className="sample-item"
+                                    src={image}
+                                    alt="After matching, your results will appear here"/> 
+                                )
+                            }
                     </div>
                     )
                 })
