@@ -1,14 +1,15 @@
 import React from "react";
+import "./SampleOptions.css"
 
 function SampleOptions({buttonName, options}){
     return (
-        <div className='options'>
-            <button>{buttonName}</button>
+        <div className='sample-option-item'>
             <select>
                 {
                     options?.map(option => <option key={option}>{option}</option>)
                 }
             </select>
+            <button>{buttonName}</button>
         </div>
     )
 }

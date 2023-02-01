@@ -1,0 +1,41 @@
+#options {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+#options .option-items .sample-options {
+    margin-top: 2rem;
+    margin-bottom: 2.25rem;
+}
+
+#options .option-items h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+#options .option-items .sample-option-item {
+    margin-top: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+#options .option-items .match-option-item {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+#options .option-items .match-options {
+    margin-top: 2.25rem;
+    margin-bottom: 2rem;
+}
+
+#options .option-items #save-changes-btn {
+    margin-top: 0.9rem;
+    width: max-content;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}

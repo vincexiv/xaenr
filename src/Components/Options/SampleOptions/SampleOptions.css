@@ -1,0 +1,27 @@
+.sample-option-item button,
+.sample-option-item select,
+.sample-option-item select option{
+    cursor: pointer;
+}
+
+.sample-option-item button {
+    outline: none;
+    border: none;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+}
+
+.sample-option-item select {
+    background-color: transparent;
+    border: var(--light-border);
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+    outline: none;
+    margin-right: 1.4rem;
+}

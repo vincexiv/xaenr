@@ -1,0 +1,8 @@
+.match-option-item input {
+    margin-right: 0.5rem;
+}
+
+.match-option-item input,
+.match-option-item label {
+    cursor: pointer;
+}
