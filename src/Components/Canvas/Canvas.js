@@ -7,17 +7,11 @@ function Canvas(){
 
     useEffect(()=>{
         const canv = canvasRef.current
-        // canv.width =  window.innerWidth * 0.09
-        // canv.height = window.innerWidth * 0.09
-
         let ctx = canv.getContext('2d')
 
         resize(ctx)
 
         window.addEventListener('resize', resize)
-
-        // console.log("canvas Ref width", canvasRef.current?.offsetWidth)
-        // console.log("canvas Ref Height", canvasRef.current?.offsetHeight)
 
         canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
         canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
