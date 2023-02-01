@@ -1,13 +1,22 @@
 .sample-items-container,
-.options-container,
 .options-container .match-options {
     display: flex;
     flex-direction: column;
 }
 
-.canvas-item-container {
+.canvas-item-container, 
+.options-container {
     display: grid;
     place-items: center;
+}
+
+.options-container {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .start-match-container {
@@ -15,6 +24,6 @@
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     height: 2rem;
-    background-color: rgba(128, 0, 128, 0.3);
+    background-image: linear-gradient(to right, rgb(138, 43, 226), blue);
     border-radius: 1rem;
 }

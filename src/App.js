@@ -21,7 +21,7 @@ function App() {
           <Canvas />
         </div>
 
-        <div className='options-container'>
+        <div className='options-container display-hidden'>
           <Options />
         </div>
 
