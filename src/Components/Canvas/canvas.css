@@ -1,5 +1,16 @@
 #canvas-item {
     background-color: var(--background-light);
-    height: 25rem;
-    width: 25rem;
+    height: 23rem;
+    width: 23rem;
+}
+
+.btn {
+    padding: 0.5rem;
+    min-width: 9rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
 }

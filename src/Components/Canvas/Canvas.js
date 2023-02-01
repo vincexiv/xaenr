@@ -58,9 +58,18 @@ function Canvas(){
         ctx.moveTo(x, y)
     }
 
-    return (
+    function clearCanvas(){
+        canvasRef.current.getContext('2d').clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
+    }
 
+    return (
+        <div>
             <canvas id='canvas-item' ref={canvasRef}/>
+            <div className='buttons'>
+                <button className='btn' onClick={clearCanvas}>Clear</button>
+                <button className='btn'>Add</button>
+            </div>
+        </div>
     )
 }
 
