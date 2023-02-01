@@ -12,10 +12,9 @@ function Canvas(){
 
         let ctx = canv.getContext('2d')
 
-        // window.addEventListener('resize', ()=>{
-        //     canv.width =  window.innerWidth * 0.09
-        //     canv.height = window.innerWidth * 0.09
-        // })
+        resize(ctx)
+
+        window.addEventListener('resize', resize)
 
         // console.log("canvas Ref width", canvasRef.current?.offsetWidth)
         // console.log("canvas Ref Height", canvasRef.current?.offsetHeight)
@@ -24,6 +23,11 @@ function Canvas(){
         canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
         canv.addEventListener('mousemove', (e)=>draw(e, ctx))
     })
+
+    function resize(ctx){
+        ctx.canvas.width = ctx.canvas.height * 
+        (ctx.canvas.clientWidth / ctx.canvas.clientHeight);
+    }
 
     function startedDrawing(e, ctx){
         drawing = true
@@ -35,15 +39,16 @@ function Canvas(){
         drawing = false
         console.log("finishd drawing")
         ctx.beginPath()
-        console.log(canvasRef.current.toDataURL())
-
+        // console.log(canvasRef.current.toDataURL())
+        // console.log(ctx.canvas)
+        // ctx.strokeRect(20, 20, 40, 40)
     }
 
     function draw(e, ctx){
         if(!drawing) return 
-        const rect = canvasRef.current.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top;
+        const rect = ctx.canvas.getBoundingClientRect()
+        const x = e.pageX - rect.left
+        const y = e.pageY - rect.top;
 
         console.log("x and y", x, y)
 
