@@ -1,15 +1,16 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import "./canvas.css"
 
 function Canvas(){
     let drawing = false
     const canvasRef = useRef()
+    const [remSize, setRemSize] = useState(12)
 
     useEffect(()=>{
         const canv = canvasRef.current
         let ctx = canv.getContext('2d')
 
-        resize(ctx)
+        resize()
 
         window.addEventListener('resize', resize)
 
@@ -19,8 +20,8 @@ function Canvas(){
     })
 
     function resize(ctx){
-        ctx.canvas.width = ctx.canvas.height * 
-        (ctx.canvas.clientWidth / ctx.canvas.clientHeight);
+        // Size of 1 rem in pixels
+        setRemSize(parseFloat(getComputedStyle(document.documentElement).fontSize))
     }
 
     function startedDrawing(e, ctx){
@@ -46,7 +47,7 @@ function Canvas(){
 
         console.log("x and y", x, y)
 
-        ctx.lineWidth ='20'
+        ctx.lineWidth = '20'
         ctx.lineCap = 'round'
         ctx.strokeStyle = 'black'
         ctx.fillStyle = 'black'
@@ -63,7 +64,7 @@ function Canvas(){
 
     return (
         <div>
-            <canvas id='canvas-item' ref={canvasRef} width="276" height="276"/>
+            <canvas id='canvas-item' ref={canvasRef} width={remSize*24} height={remSize*24}/>
             <div className='buttons'>
                 <button className='btn' onClick={clearCanvas}>Clear</button>
                 <button className='btn'>Add</button>
