@@ -66,9 +66,21 @@ function Canvas({status, setStatus}){
 
     function addImageToSample(){
         const sampleImages = status.sampleImages
-        sampleImages.shift()
-        sampleImages.push(image)
-        setStatus(status => ({...status, sampleImages: sampleImages}))
+
+        if(status.activeSample === null){
+            sampleImages.shift()
+            sampleImages.push(image)
+            setStatus(status => ({...status, sampleImages: sampleImages}))
+        }else {
+            const newImages = sampleImages.map((sampleImage, index) => {
+                if(index === status.activeSample){
+                    return image
+                }else{
+                    return sampleImage
+                }
+            })
+            setStatus(status => ({...status, sampleImages: newImages}))
+        }
         clearCanvas()
     }
 
