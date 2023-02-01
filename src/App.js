@@ -9,25 +9,35 @@ function App() {
   const [status, setStatus] = useState({
     activeSample: null,
     sampleImages: [1, 2, 3],
-    resultImages: [1, 2, 3]
+    resultImages: [1, 2],
+    painting: false
   })
+
+  function togglePainting(){
+    setStatus(status => ({...status, painting: !status.painting}))
+  }
 
   return (
     <>
       <Navbar />
 
       <div className='container'>
-        <div className='canvas-item-container'>
-          <Canvas />
-        </div>
+        {
+          status.painting? (
+            <div className='canvas-item-container'>
+              <Canvas />
+            </div>
+          ) : (
+            <div className='options-container'>
+              <Options />
+            </div>
+          )
+        }
 
-        <div className='options-container display-hidden'>
-          <Options />
-        </div>
 
         <div className='sample-items-container'>
           <SampleItems
-            images={[1, 2, 3]}
+            images={status.sampleImages}
             sampleType="sample"
             status={status}
             setStatus={setStatus}/>
@@ -35,11 +45,24 @@ function App() {
           <div className='start-match-container'>
           </div>
 
-          <SampleItems
-            images={[1, 2, 3]}
-            sampleType="results"
-            status={status}
-            setStatus={setStatus}/>
+          <div id='results-and-buttons'>
+            <div id='matching-btn-container'>
+              <button id='matching-btn'>Start Matching</button>
+              <button id='matching-btn' onClick={togglePainting}>
+                {
+                  status.painting? "More Options" : "Go to Canvas"
+                }
+              </button>
+            </div>
+
+            <SampleItems
+              images={status.resultImages}
+              sampleType="results"
+              status={status}
+              setStatus={setStatus}/>
+          </div>
+
+ 
         </div>
       </div>
     </>
