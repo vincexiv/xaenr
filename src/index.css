@@ -30,6 +30,7 @@ body {
   width: calc(min(95vw, 95rem));
   border: var(--light-border);
   margin: auto;
+  padding: 1rem;
   height: max-content;
   display: flex;
   justify-content: space-evenly;
