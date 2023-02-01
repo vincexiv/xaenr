@@ -2,7 +2,7 @@ import React from "react";
 import SampleItemBtn from "./SampleItemBtn/SampleItemBtn";
 import "./SampleItems.css"
 
-function SampleItems({images, sampleType, activeSample, setActiveSample}){
+function SampleItems({images, sampleType, status, setStatus}){
     return (
         <div id='sample-items'>
             {
@@ -10,7 +10,13 @@ function SampleItems({images, sampleType, activeSample, setActiveSample}){
                     return (
                     <div
                         key={`item-and-btn-${index}`}
-                        className={activeSample ===+ index? 'active item-and-btn': 'item-and-btn'}>
+                        className={
+                            (status.activeSample === index && sampleType === "sample") ?
+                            'active item-and-btn': 
+                            (index === 0 && sampleType === "results") ?
+                            'active item-and-btn ':
+                            'item-and-btn'
+                        }>
 
                             <div
                                 id={`${sampleType}-${index}`}
@@ -21,8 +27,8 @@ function SampleItems({images, sampleType, activeSample, setActiveSample}){
                                 sampleType === "sample"? (
                                     <SampleItemBtn
                                     index={index}
-                                    activeSample={activeSample}
-                                    setActiveSample={setActiveSample}/>
+                                    status={status}
+                                    setStatus={setStatus}/>
                                 ) : ""
                             }
 

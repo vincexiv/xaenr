@@ -6,7 +6,11 @@ import Options from './Components/Options/Options';
 import SampleItems from './Components/SampleItems/SampleItems';
 
 function App() {
-  const [activeSample, setActiveSample] = useState(null)
+  const [status, setStatus] = useState({
+    activeSample: null,
+    sampleImages: [1, 2, 3],
+    resultImages: [1, 2, 3]
+  })
 
   return (
     <>
@@ -25,14 +29,14 @@ function App() {
           <SampleItems
             images={[1, 2, 3]}
             sampleType="sample"
-            activeSample={activeSample}
-            setActiveSample={setActiveSample}/>
+            status={status}
+            setStatus={setStatus}/>
 
           <SampleItems
             images={[1, 2, 3]}
             sampleType="results"
-            activeSample={activeSample}
-            setActiveSample={setActiveSample}/>
+            status={status}
+            setStatus={setStatus}/>
         </div>
       </div>
     </>

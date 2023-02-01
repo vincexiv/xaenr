@@ -1,17 +1,17 @@
 import React from 'react'
 import "./SampleItemBtn.css"
 
-function SampleItemBtn({index, activeSample, setActiveSample}){
+function SampleItemBtn({index, status, setStatus}){
     function makeActive(){
-        setActiveSample(index)
+        setStatus(status => ({...status, activeSample: index}))
     }
 
     return (
         <button
-            className={activeSample === index? "sample-item-btn active": "sample-item-btn"}
+            className={status.activeSample === index? "sample-item-btn active": "sample-item-btn"}
             onClick={makeActive}
             >
-            {activeSample === index? "Match" : "Match"}
+            {status.activeSample === index? "Match" : "Match"}
         </button>
     )
 }
