@@ -35,9 +35,6 @@ function Canvas({status, setStatus}){
         drawing = false
         console.log("finishd drawing")
         ctx.beginPath()
-        // console.log(canvasRef.current.toDataURL())
-        // console.log(ctx.canvas)
-        // ctx.strokeRect(20, 20, 40, 40)
         setImage(canvasRef.current.toDataURL())
     }
 
