@@ -37,6 +37,21 @@
     padding-bottom: 0.5rem;
     cursor: pointer;
     width: 100%;
+    background-color: blue;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--color-light);
+    font-weight: 900;
+}
+
+#matching-btn-container .btn:hover:not(.visited) {
+    background-image: linear-gradient(to left, rgb(138, 43, 226), blue);   
+    outline: var(--light-border);
+}
+
+#matching-btn-container .btn.visited {
+    background-image: linear-gradient(to left, rgb(138, 43, 226), rgb(240, 0, 0));   
 }
 
 #results-and-buttons {

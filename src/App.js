@@ -14,7 +14,15 @@ function App() {
   const previousStatus = useRef(defaultState)
   const [status, setStatus] = useState(defaultState)
 
-  function clearInputs(){
+  function changeBtnColor(e){
+    e.target.classList.add('visited')
+    setTimeout(()=>{
+      e.target.classList.remove('visited')
+    }, 200)
+  }
+
+  function clearInputs(e){
+    changeBtnColor(e)
     previousStatus.current = status
 
     if(status.activeSample === null){
@@ -32,7 +40,8 @@ function App() {
     }
   }
 
-  function undoChange(){
+  function undoChange(e){
+    changeBtnColor(e)
     setStatus(previousStatus.current)
   }
 
@@ -61,9 +70,9 @@ function App() {
 
           <div id='results-and-buttons'>
             <div id='matching-btn-container'>
-              <button className='btn' onClick={clearInputs}> Clear </button>
-              <button className='btn' onClick={undoChange}>Undo</button>
-              <button className='btn'>Start Matching</button>
+              <button className='btn clear-btn' onClick={clearInputs}> Clear </button>
+              <button className='btn undo-btn' onClick={undoChange}>Undo</button>
+              <button className='btn start-matching-btn'>Start Matching</button>
             </div>
 
             <SampleItems
