@@ -46,7 +46,7 @@ function Canvas({status, setStatus}){
 
         console.log("x and y", x, y)
 
-        ctx.lineWidth = '30'
+        ctx.lineWidth = '10'
         ctx.lineCap = 'round'
         ctx.strokeStyle = 'black'
         ctx.fillStyle = 'black'
