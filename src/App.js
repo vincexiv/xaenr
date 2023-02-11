@@ -11,15 +11,29 @@ function App() {
     resultImages: [1, 2],
     painting: true
   }
+  const previousStatus = useRef(defaultState)
   const [status, setStatus] = useState(defaultState)
-  const previousState = useRef(status)
 
   function clearInputs(){
-    setStatus(defaultState)
+    previousStatus.current = status
+
+    if(status.activeSample === null){
+      setStatus(defaultState)
+    }else {
+      const newSampleImages = status.sampleImages.map((sampleImage, index) => {
+        if(status.activeSample === index){
+          return status.activeSample
+        }else {
+          return sampleImage
+        }
+      })
+
+      setStatus(status => ({...status, sampleImages: newSampleImages }))
+    }
   }
 
   function undoChange(){
-    setStatus(previousState.current)
+    setStatus(previousStatus.current)
   }
 
   console.log("status: ", status)
@@ -30,7 +44,10 @@ function App() {
 
       <div className='container'>
         <div className='canvas-item-container'>
-          <Canvas status={status} setStatus={setStatus}/>
+          <Canvas
+            status={status}
+            setStatus={setStatus}
+            previousStatus={previousStatus}/>
         </div>
   
         <div className='sample-items-container'>
@@ -38,15 +55,16 @@ function App() {
             images={status.sampleImages}
             sampleType="sample"
             status={status}
-            setStatus={setStatus}/>
+            setStatus={setStatus}
+            previousStatus={previousStatus}/>
 
           <div className='start-match-container'>
           </div>
 
           <div id='results-and-buttons'>
             <div id='matching-btn-container'>
-              <button className='btn' onClick={clearInputs}> Clear Inputs </button>
-              <button className='btn' onClick={undoChange}>Undo Change</button>
+              <button className='btn' onClick={clearInputs}> Clear </button>
+              <button className='btn' onClick={undoChange}>Undo</button>
               <button className='btn'>Start Matching</button>
             </div>
 

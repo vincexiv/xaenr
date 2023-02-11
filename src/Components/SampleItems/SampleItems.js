@@ -2,7 +2,7 @@ import React from "react";
 import SampleItemBtn from "./SampleItemBtn/SampleItemBtn";
 import "./SampleItems.css"
 
-function SampleItems({images, sampleType, status, setStatus}){
+function SampleItems({images, sampleType, status, setStatus, previousStatus}){
     return (
         <div id='sample-items'>
             {
@@ -29,7 +29,8 @@ function SampleItems({images, sampleType, status, setStatus}){
                                         <SampleItemBtn
                                         index={index}
                                         status={status}
-                                        setStatus={setStatus}/>
+                                        setStatus={setStatus}
+                                        previousStatus={previousStatus}/>
                                     </>
                                 ): (
                                     <img

@@ -1,8 +1,9 @@
 import React from 'react'
 import "./SampleItemBtn.css"
 
-function SampleItemBtn({index, status, setStatus}){
+function SampleItemBtn({index, status, setStatus, previousStatus}){
     function makeActive(){
+        previousStatus.current = status
         if(status.activeSample !== index){
             setStatus(status => ({...status, activeSample: index}))
         }else{

@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from 'react'
 import "./canvas.css"
 
-function Canvas({status, setStatus}){
+function Canvas({status, setStatus, previousStatus}){
     let drawing = false
     const canvasRef = useRef()
     const [remSize, setRemSize] = useState(parseFloat(getComputedStyle(document.documentElement).fontSize))
@@ -63,6 +63,7 @@ function Canvas({status, setStatus}){
     }
 
     function addImageToSample(){
+        previousStatus.current = status
         const sampleImages = status.sampleImages
 
         if(status.activeSample === null){
