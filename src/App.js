@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import Navbar from './Components/Navbar/Navbar';
 import Canvas from './Components/Canvas/Canvas'
 import SampleItems from './Components/SampleItems/SampleItems';
@@ -12,9 +12,14 @@ function App() {
     painting: true
   }
   const [status, setStatus] = useState(defaultState)
+  const previousState = useRef(status)
 
   function clearInputs(){
     setStatus(defaultState)
+  }
+
+  function undoChange(){
+    setStatus(previousState.current)
   }
 
   console.log("status: ", status)
@@ -40,10 +45,9 @@ function App() {
 
           <div id='results-and-buttons'>
             <div id='matching-btn-container'>
-              <button id='matching-btn'>Start Matching</button>
-              <button id='matching-btn' onClick={clearInputs}>
-                Clear Inputs
-              </button>
+              <button className='btn' onClick={clearInputs}> Clear Inputs </button>
+              <button className='btn' onClick={undoChange}>Undo Change</button>
+              <button className='btn'>Start Matching</button>
             </div>
 
             <SampleItems
