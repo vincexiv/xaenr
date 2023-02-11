@@ -51,7 +51,7 @@
 }
 
 #matching-btn-container .btn.visited {
-    background-image: linear-gradient(to left, rgb(138, 43, 226), rgb(240, 0, 0));   
+    background-image: linear-gradient(to left, rgb(138, 43, 226),  rgb(138, 43, 226));   
 }
 
 #results-and-buttons {
