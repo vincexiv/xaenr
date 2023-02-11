@@ -27,13 +27,11 @@ function Canvas({status, setStatus, previousStatus}){
 
     function startedDrawing(e, ctx){
         drawing = true
-        console.log("started drawing")
         draw(e, ctx)
     }
 
     function finishedDrawing(e, ctx){
         drawing = false
-        console.log("finishd drawing")
         ctx.beginPath()
         setImage(canvasRef.current.toDataURL())
     }
@@ -43,8 +41,6 @@ function Canvas({status, setStatus, previousStatus}){
         const rect = ctx.canvas.getBoundingClientRect()
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top;
-
-        console.log("x and y", x, y)
 
         ctx.lineWidth = '10'
         ctx.lineCap = 'round'

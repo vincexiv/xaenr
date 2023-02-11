@@ -36,8 +36,6 @@ function App() {
     setStatus(previousStatus.current)
   }
 
-  console.log("status: ", status)
-
   return (
     <>
       <Navbar />
