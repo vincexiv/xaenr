@@ -46,12 +46,12 @@
 }
 
 #matching-btn-container .btn:hover:not(.visited) {
-    background-image: linear-gradient(to left, rgb(138, 43, 226), blue);   
+    background-image: linear-gradient(to left, rgb(138, 43, 226, rgb(138, 43, 226)));   
     outline: var(--light-border);
 }
 
 #matching-btn-container .btn.visited {
-    background-image: linear-gradient(to left, rgb(138, 43, 226),  rgb(138, 43, 226));   
+    background-image: linear-gradient(to left, rgb(138, 43, 226), blue,  rgb(138, 43, 226));   
 }
 
 #results-and-buttons {
