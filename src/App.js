@@ -2,19 +2,19 @@ import './App.css';
 import React, {useState} from 'react'
 import Navbar from './Components/Navbar/Navbar';
 import Canvas from './Components/Canvas/Canvas'
-import Options from './Components/Options/Options';
 import SampleItems from './Components/SampleItems/SampleItems';
 
 function App() {
-  const [status, setStatus] = useState({
+  const defaultState = {
     activeSample: null,
     sampleImages: [1, 2, 3],
     resultImages: [1, 2],
     painting: true
-  })
+  }
+  const [status, setStatus] = useState(defaultState)
 
-  function togglePainting(){
-    setStatus(status => ({...status, painting: !status.painting}))
+  function clearInputs(){
+    setStatus(defaultState)
   }
 
   console.log("status: ", status)
@@ -24,19 +24,10 @@ function App() {
       <Navbar />
 
       <div className='container'>
-        {
-          status.painting? (
-            <div className='canvas-item-container'>
-              <Canvas status={status} setStatus={setStatus}/>
-            </div>
-          ) : (
-            <div className='options-container'>
-              <Options />
-            </div>
-          )
-        }
-
-
+        <div className='canvas-item-container'>
+          <Canvas status={status} setStatus={setStatus}/>
+        </div>
+  
         <div className='sample-items-container'>
           <SampleItems
             images={status.sampleImages}
@@ -50,10 +41,8 @@ function App() {
           <div id='results-and-buttons'>
             <div id='matching-btn-container'>
               <button id='matching-btn'>Start Matching</button>
-              <button id='matching-btn' onClick={togglePainting}>
-                {
-                  status.painting? "More Options" : "Go to Canvas"
-                }
+              <button id='matching-btn' onClick={clearInputs}>
+                Clear Inputs
               </button>
             </div>
 
