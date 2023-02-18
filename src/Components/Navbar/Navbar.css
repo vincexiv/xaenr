@@ -13,45 +13,45 @@ nav .nav-content {
     color: var(--color-light);
 }
 
-.nav-content .actions {
+nav .nav-content .actions {
     display: flex;
 }
 
-.item {
+nav .item {
     min-width: 9rem;
     text-align: center;
 }
 
-#how-to-test-it {
+nav #how-to-test-it {
     margin-left: 0.5rem;
     margin-right: 1rem;
 }
 
-#how-it-works {
+nav #how-it-works {
     margin-right: 0.5rem;
     margin-left: 1rem;
 }
 
-.actions p {
+nav .actions p {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     border-radius: 0.5rem;
     /* background-color: var(--background-dark-red); */
 }
 
-.actions p:hover {
+nav .actions p:hover {
     background-color: var(--semi-light);
 }
 
-.actions p:hover.active{
+nav .actions p:hover.active{
     outline: var(--light-border); 
 }
 
-.actions p.active:not(:hover){
+nav .actions p.active:not(:hover){
     background-color: var(--semi-light);
     outline: var(--light-border);
 }
 
-.nav-content .item, .company-name {
+nav .nav-content .item, .company-name {
     cursor: pointer;
 }
