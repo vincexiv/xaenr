@@ -32,8 +32,6 @@ body {
   margin: auto;
   padding: 1rem;
   height: max-content;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 @media only screen and (min-width: 1360px){

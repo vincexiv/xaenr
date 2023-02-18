@@ -1,3 +1,7 @@
+#home.container {
+    display: flex;
+    justify-content: space-evenly;
+}
 .sample-items-container,
 .options-container .match-options {
     display: flex;

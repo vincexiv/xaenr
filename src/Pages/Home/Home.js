@@ -46,7 +46,7 @@ function Home(){
     }
       
     return (
-        <div className='container'>
+        <div id="home" className='container'>
             <div className='canvas-item-container'>
             <Canvas
                 status={status}
