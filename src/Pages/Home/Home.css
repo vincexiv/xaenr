@@ -19,8 +19,12 @@
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     height: 2rem;
-    background-image: linear-gradient(to right, rgb(138, 43, 226), blue);
+    background-image: linear-gradient(to right, yellow, green);
     border-radius: 1rem;
+}
+
+#home.container {
+    margin-top: 12vh;
 }
 
 #matching-btn-container{
@@ -37,12 +41,11 @@
 }
 
 #matching-btn-container .btn:hover:not(.visited) {
-    background-image: linear-gradient(to left, rgb(138, 43, 226, rgb(138, 43, 226)));   
-    outline: var(--light-border);
+    outline: solid rgba(210, 210, 0, 0.6) 0.1rem;
 }
 
 #matching-btn-container .btn.visited {
-    background-color: var(--semi-light);
+    background-color: rgba(0, 255, 0, 0.95);
 }
 
 #results-and-buttons {
