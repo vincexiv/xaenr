@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useRef, useState} from "react";
 import Canvas from '../../Components/Canvas/Canvas'
 import SampleItems from '../../Components/SampleItems/SampleItems';
 
-function Home({defaultState, status, setStatus, previousStatus}){
+function Home(){
+    const defaultState = {
+        activeSample: null,
+        sampleImages: [1, 2, 3],
+        resultImages: [1, 2],
+        painting: true
+      }
+      const previousStatus = useRef(defaultState)
+      const [status, setStatus] = useState(defaultState)
+
 
     function changeBtnColor(e){
         e.target.classList.add('visited')
