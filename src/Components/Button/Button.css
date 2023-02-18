@@ -6,7 +6,7 @@ button {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     cursor: pointer;
-    width: max-content;
+    min-width: max-content;
     background-color: var(--primary-btn-color);
     outline: none;
     border: none;
