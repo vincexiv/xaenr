@@ -1,0 +1,76 @@
+#pieces {
+    display: grid;
+    width: max-content;
+}
+
+#pieces.test {
+    gap: 0.5rem;
+    grid-template-areas:
+        "f c c j n d d d e e e e"
+        "f c c j n h h h h h l l"
+        "i i q j r r k k m m m m"
+        "i i t a u w w w w w p p"
+        "y y y a u v g g x x p p"
+        "y y y o o v g g x x p p"
+        "b b b o o v g g s s s s";
+}
+
+#pieces.solution {
+    gap: 0.1rem;
+    grid-template-areas:
+        "a b c d e"
+        "f g h i j"
+        "k l m n o"
+        "p q r s t"
+        "u v w x y";
+}
+
+#pieces .piece {
+    background-color: white;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+#pieces.test .piece {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+#pieces .piece.colored {
+    background-color: green;
+}
+
+.a, .b, .c, .d, .e,
+.f, .g, .h, .i, .j,
+.k, .l, .m, .n, .o,
+.p, .q, .r, .s, .t,
+.u, .v, .w, .x, .y {
+    display: grid; place-items: center;
+}
+
+.a { grid-area: a; }
+.b { grid-area: b; }
+.c { grid-area: c; }
+.d { grid-area: d; }
+.e { grid-area: e; }
+.f { grid-area: f; }
+.g { grid-area: g; }
+.h { grid-area: h; }
+.i { grid-area: i; }
+.j { grid-area: j; }
+.k { grid-area: k; }
+.l { grid-area: l; }
+.m { grid-area: m; }
+.n { grid-area: n; }
+.o { grid-area: o; }
+.p { grid-area: p; }
+.q { grid-area: q; }
+.r { grid-area: r; }
+.s { grid-area: s; }
+.t { grid-area: t; }
+.u { grid-area: u; }
+.v { grid-area: v; }
+.w { grid-area: w; }
+.x { grid-area: x; }
+.y { grid-area: y; }
