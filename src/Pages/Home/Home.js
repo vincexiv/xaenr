@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import Canvas from '../../Components/Canvas/Canvas'
 import SampleItems from '../../Components/SampleItems/SampleItems';
+import "./Home.css"
 
 function Home(){
     const defaultState = {
