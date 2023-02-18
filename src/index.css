@@ -28,7 +28,7 @@ body {
   transform: translate(-50%, -50%);
 
   width: calc(min(95vw, 95rem));
-  border: var(--light-border);
+  /* border: var(--light-border); */
   margin: auto;
   padding: 1rem;
   height: max-content;
