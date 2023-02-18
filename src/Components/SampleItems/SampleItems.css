@@ -1,8 +1,4 @@
-#sample-items {
-    display: flex;
-}
-
-#sample-items .item-and-btn {
+.sample-items-item-and-btn {
     display: flex;
     flex-direction: column;
     margin: calc(max(1vw, 1rem));
@@ -17,7 +13,7 @@
     background-color: var(--semi-light);
 }
 
-#sample-items .sample-item {
+.sample-items-sample-item {
     width: calc(var(--one-vh) * 9);
     height: calc(var(--one-vh) * 9);
     min-width: 7rem;
@@ -27,6 +23,6 @@
     z-index: 1;
 }
 
-#sample-items .item-and-btn.active{
+.sample-items-item-and-btn.active{
     background-color: var(--background-dark);
 }
