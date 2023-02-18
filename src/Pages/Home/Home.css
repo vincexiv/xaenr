@@ -33,20 +33,7 @@
 }
 
 #matching-btn-container .btn {
-    margin-top: 0.6rem;
-    margin-bottom: 0.6rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    cursor: pointer;
     width: 100%;
-    background-color: blue;
-    outline: none;
-    border: none;
-    border-radius: 0.5rem;
-    color: var(--color-light);
-    font-weight: 900;
 }
 
 #matching-btn-container .btn:hover:not(.visited) {
@@ -55,7 +42,7 @@
 }
 
 #matching-btn-container .btn.visited {
-    background-image: linear-gradient(to left, rgb(138, 43, 226), blue,  rgb(138, 43, 226));   
+    background-color: var(--semi-light);
 }
 
 #results-and-buttons {

@@ -1,7 +1,9 @@
 import React, {useRef, useState} from "react";
 import Canvas from '../../Components/Canvas/Canvas'
 import SampleItems from '../../Components/SampleItems/SampleItems';
+import Button from "../../Components/Button/Button";
 import "./Home.css"
+import { clear } from "@testing-library/user-event/dist/clear";
 
 function Home(){
     const defaultState = {
@@ -67,9 +69,9 @@ function Home(){
 
             <div id='results-and-buttons'>
                 <div id='matching-btn-container'>
-                <button className='btn clear-btn' onClick={clearInputs}> Clear </button>
-                <button className='btn undo-btn' onClick={undoChange}>Undo</button>
-                <button className='btn start-matching-btn'>Start Matching</button>
+                  <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
+                  <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
+                  <Button classList={['btn', 'start-matching-btn']} message="Start Matching" />
                 </div>
 
                 <SampleItems
