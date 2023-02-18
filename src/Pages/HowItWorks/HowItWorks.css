@@ -1,3 +1,69 @@
 #how-it-works {
     color: white;
 }
+
+#how-it-works h2 {
+    margin-top: 1.5rem;
+    /* background-color:; */
+}
+
+#how-it-works .m-top-1 {
+    margin-top: 1rem;
+}
+
+#how-it-works .m-15:not(h2) {
+    max-width: max(30vw, 40rem);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#how-it-works ol li {
+    margin-left: 2rem;
+}
+
+#how-it-works .neighbor-value-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.7rem;
+    width: max-content;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#how-it-works.container {
+    margin-top: 5vh;
+}
+
+#how-it-works #how-it-works-the-parts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#how-it-works-2 .solutions {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    height: max-content;
+    margin-left: 2rem;
+}
+
+#how-it-works .see-solution-btn-and-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#how-it-works .see-solution-btn-and-text .text {
+    width: 60%;
+}
+
+#how-it-works .see-solution-btn-and-text .see-solution {
+    display: grid;
+    place-items: center;
+    width: 40%;
+}
+
+#how-it-works .see-solution-span {
+    color: green;
+}
