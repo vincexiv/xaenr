@@ -1,16 +1,20 @@
-#canvas-item {
+#canvas-item-and-btn-container {
+    width: max-content;
+}
+
+#canvas-item-and-btn-container #canvas-item {
     background-color: var(--background-light);
     /* height: 23rem;
     width: 23rem; */
 }
 
-.btn {
+#canvas-item-and-btn-container.btn {
     padding: 0.5rem;
     min-width: 9rem;
     cursor: pointer;
 }
 
-.buttons {
+#canvas-item-and-btn-container .buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
