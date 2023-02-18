@@ -48,38 +48,37 @@ function Home(){
     }
       
     return (
-        <div id="home" className='container'>
-            <div className='canvas-item-container'>
-            <Canvas
-                status={status}
-                setStatus={setStatus}
-                previousStatus={previousStatus}/>
+      <div id="home" className='container'>
+        <div className='canvas-item-container'>
+          <Canvas
+            status={status}
+            setStatus={setStatus}
+            previousStatus={previousStatus}/>
+        </div>
+
+        <div className='sample-items-container'>
+          <SampleItems
+            images={status.sampleImages}
+            sampleType="sample"
+            status={status}
+            setStatus={setStatus}
+            previousStatus={previousStatus}/>
+
+          <div className='start-match-container'></div>
+
+          <div id='results-and-buttons'>
+            <div id='matching-btn-container'>
+              <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
+              <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
+              <Button classList={['btn', 'start-matching-btn']} message="Start Matching" />
             </div>
-  
-            <div className='sample-items-container'>
+
             <SampleItems
-                images={status.sampleImages}
-                sampleType="sample"
-                status={status}
-                setStatus={setStatus}
-                previousStatus={previousStatus}/>
-
-            <div className='start-match-container'>
-            </div>
-
-            <div id='results-and-buttons'>
-                <div id='matching-btn-container'>
-                  <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
-                  <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
-                  <Button classList={['btn', 'start-matching-btn']} message="Start Matching" />
-                </div>
-
-                <SampleItems
-                images={status.resultImages}
-                sampleType="results"
-                status={status}
-                setStatus={setStatus}/>
-            </div>
+              images={status.resultImages}
+              sampleType="results"
+              status={status}
+              setStatus={setStatus}/>
+          </div>
         </div>
       </div>
     )
