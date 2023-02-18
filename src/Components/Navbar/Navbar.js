@@ -2,13 +2,19 @@ import React, {useState} from 'react'
 import './Navbar.css'
 
 function Navbar(){
-    const [activeAction, setActiveAction] = useState('how-it-works')
+    const [activeAction, setActiveAction] = useState('home')
 
     return (
         <nav>
             <div className='nav-content'>
                 <h1 className='company-name'>xaenr</h1>
                 <div className='actions'>
+                    <p id='how-it-works'
+                        className={activeAction == 'home'? 'active item': 'item'}
+                        onClick={()=>setActiveAction('home')}>
+                        Home
+                    </p>
+
                     <p id='how-it-works'
                         className={activeAction == 'how-it-works'? 'active item': 'item'}
                         onClick={()=>setActiveAction('how-it-works')}>
