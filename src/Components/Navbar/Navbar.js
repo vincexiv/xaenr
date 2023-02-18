@@ -6,7 +6,12 @@ function Navbar({activeAction, setActiveAction}){
     return (
         <nav>
             <div className='nav-content'>
-                <h1 className='company-name'>xaenr</h1>
+                <h1
+                    className='company-name'
+                    onClick={()=>setActiveAction('home')}>
+                    xaenr
+                </h1>
+                
                 <div className='actions'>
                     <p id='how-it-works'
                         className={activeAction == 'home'? 'active item': 'item'}
