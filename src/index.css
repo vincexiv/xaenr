@@ -10,6 +10,7 @@
   --color-light: rgb(240, 240, 240);
   --semi-light: rgb(60, 60, 60);
   --background-dark-red: rgb(180, 0, 0);
+  --primary-btn-color: green;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   /* outline: red solid 0.1rem; */
@@ -22,16 +23,12 @@ body {
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  margin: auto;
   width: calc(min(95vw, 95rem));
   /* border: var(--light-border); */
-  margin: auto;
   padding: 1rem;
-  height: max-content;
+  min-height: max-content;
+  max-height: 80vh;
 }
 
 @media only screen and (min-width: 1360px){
