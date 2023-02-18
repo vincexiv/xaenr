@@ -9,7 +9,8 @@ import ContactInfo from './Pages/ContactInfo/ContactInfo';
 
 function App() {
   const navigate = useNavigate()
-  const [activeAction, setActiveAction] = useState('home')
+  const [activeAction, setActiveAction] = useState(localStorage.getItem('activeAction') || 'home')
+  localStorage.setItem('activeAction', activeAction)
 
   useEffect(()=>{
     navigate(activeAction)
