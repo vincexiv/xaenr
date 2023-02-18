@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import './Navbar.css'
 
-function Navbar(){
-    const [activeAction, setActiveAction] = useState('home')
+function Navbar({activeAction, setActiveAction}){
 
     return (
         <nav>
