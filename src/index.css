@@ -18,13 +18,13 @@
 
 body {
   background-color: var(--background-dark);
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
 .container {
   margin: auto;
-  width: calc(min(95vw, 95rem));
+  max-width: calc(min(95vw, 95rem));
   /* border: var(--light-border); */
   padding: 1rem;
   min-height: max-content;
