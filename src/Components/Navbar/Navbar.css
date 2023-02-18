@@ -22,12 +22,12 @@ nav .item {
     text-align: center;
 }
 
-nav #how-to-test-it {
+nav #nav-content-how-to-test-it {
     margin-left: 0.5rem;
     margin-right: 1rem;
 }
 
-nav #how-it-works {
+nav #nav-content-how-it-works {
     margin-right: 0.5rem;
     margin-left: 1rem;
 }
