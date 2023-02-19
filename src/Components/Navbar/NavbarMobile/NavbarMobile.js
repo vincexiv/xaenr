@@ -1,19 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import "./NavbarMobile.css"
 
 function NavbarMobile({activeAction, setActiveAction}){
     const [showNavbarOptions, setShowNavbarOptions] = useState(false)
+    const checkBox = useRef()
 
     function handleCheckboxClick(e){
         setShowNavbarOptions(e.target.checked)
     }
 
-
+    function changeActiveAction(newActiveAction){
+        setActiveAction(newActiveAction)
+        checkBox.current.click()
+    }
 
     return (
         <div id="navbar-mobile">
             <label for="check">
-                <input type="checkbox" id="check" onClick={handleCheckboxClick}/> 
+                <input type="checkbox" id="check" ref={checkBox} onClick={handleCheckboxClick}/> 
                 <span></span>
                 <span></span>
                 <span></span>
@@ -25,25 +29,25 @@ function NavbarMobile({activeAction, setActiveAction}){
                         <ul className="actions">
                             <li id='nav-content-home'
                                 className={activeAction == 'home'? 'active item': 'item'}
-                                onClick={()=>setActiveAction('home')}>
+                                onClick={()=>changeActiveAction('home')}>
                                 Home
                             </li>
 
                             <li id='nav-content-how-it-works'
                                 className={activeAction == 'how-it-works'? 'active item': 'item'}
-                                onClick={()=>setActiveAction('how-it-works')}>
+                                onClick={()=>changeActiveAction('how-it-works')}>
                                 How It Works
                             </li>
 
                             <li id='nav-content-how-to-test-it'
                                 className={activeAction == 'how-to-test-it'? 'active item': 'item'}
-                                onClick={()=>setActiveAction('how-to-test-it')}>
+                                onClick={()=>changeActiveAction('how-to-test-it')}>
                                 How to Test It
                             </li>
 
                             <li id='nav-content-contact-info'
                                 className={activeAction == 'contact-info'? 'active item': 'item'}
-                                onClick={()=>setActiveAction('contact-info')}>
+                                onClick={()=>changeActiveAction('contact-info')}>
                                 Contact Info
                             </li>
                         </ul>
