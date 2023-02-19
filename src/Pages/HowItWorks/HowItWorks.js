@@ -43,7 +43,7 @@ function HowItWorks(){
                                 You have 25 differently colored pieces that you need to put 
                                 together to create a whole image (just like a normal 
                                 jigsaw puzzle). Four of the pieces are colored green, while 
-                                21 are light-gray. You have been told to get the pieces together 
+                                21 are white. You have been told to get the pieces together 
                                 to create an image whose dimensions are 5 by 5
                             </p>
                             <p className="m-15">
@@ -77,7 +77,7 @@ function HowItWorks(){
                                 There's another requirement that needs to be fulfilled though.
                                 Out of those 25 pieces, you’ve been told that 16 don’t have 
                                 any restrictive relationship with their neighbors. Their 
-                                neighbors could be white or black. However, for the other 9, 
+                                neighbors could be white or green. However, for the other 9, 
                                 the relationship with their neighbors should be as follows;
                             </p>
 
@@ -89,7 +89,7 @@ function HowItWorks(){
 
                             <p className="m-15">
                                 Think of the value at the center as representing whether the 
-                                piece itself is black or white. 1 represents black, while 0 
+                                piece itself is green or white. 1 represents green, while 0 
                                 represents white. This is what this means for the first piece;
                             </p>
 
@@ -101,7 +101,7 @@ function HowItWorks(){
 
                             <ul className="m-15">
                                 <li className="m-15">The piece itself is white in color (it has a zero at the center)</li>
-                                <li className="m-15">The piece is surrounded by 7 pieces that are colored white, and one piece that is black located at its top right.</li>
+                                <li className="m-15">The piece is surrounded by 7 pieces that are colored white, and one piece that is green located at its top right.</li>
                             </ul>
                         </li>
                     </ol>
