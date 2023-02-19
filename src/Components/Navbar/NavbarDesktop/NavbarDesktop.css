@@ -1,3 +1,7 @@
+ul#navbar-desktop li {
+    list-style: none;
+}
+
 nav {
     height: 5rem;
 }
