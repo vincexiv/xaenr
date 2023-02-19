@@ -29,7 +29,6 @@ function NavbarDesktop({activeAction, setActiveAction}){
                 onClick={()=>setActiveAction('contact-info')}>
                 Contact Info
             </li>
-
         </ul>
     )
 }
