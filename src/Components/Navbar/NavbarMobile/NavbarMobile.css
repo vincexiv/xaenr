@@ -3,6 +3,7 @@
     flex-direction:column;
     width: 3.5rem;
     cursor:pointer;
+    margin-right: 7vw;
 }
    
 #navbar-mobile label span{

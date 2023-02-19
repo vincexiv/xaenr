@@ -14,7 +14,7 @@ function Navbar({activeAction, setActiveAction}){
                     xaenr
                 </h1>
                 
-                <NavbarDesktop activeAction={activeAction} setActiveAction={setActiveAction} />
+                <NavbarMobile activeAction={activeAction} setActiveAction={setActiveAction} />
             </div>
         </nav>
     )
