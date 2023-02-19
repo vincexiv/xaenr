@@ -55,8 +55,9 @@ function HowItWorks(){
 
                             <p className="m-15 first-paragraph">
                                 Without further information being given, if requested to create the 
-                                image using the pieces provided, all the following are valid
-                                solutions to the problem
+                                image using the pieces provided, there are <b>gazillion</b> possible solutions 
+                                to the problem, and some of the possible solutions you might arrive at 
+                                are as shown below
                             </p>
                         </li>
                     </ol>
