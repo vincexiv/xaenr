@@ -1,9 +1,18 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import NavbarDesktop from './NavbarDesktop/NavbarDesktop'
 import NavbarMobile from './NavbarMobile/NavbarMobile'
 import './Navbar.css'
 
 function Navbar({activeAction, setActiveAction}){
+    const [navbarMobile, setNavbarMobile] = useState(smallScreen())
+
+    useEffect(()=>{
+        window.addEventListener('resize', ()=>setNavbarMobile(smallScreen()))
+    })
+
+    function smallScreen(){
+        return window.innerWidth < 930 || window.innerHeight/window.innerWidth >= 1;
+    }
 
     return (
         <nav>
@@ -13,9 +22,13 @@ function Navbar({activeAction, setActiveAction}){
                     onClick={()=>setActiveAction('home')}>
                     xaenr
                 </h1>
-                
-                <NavbarMobile activeAction={activeAction} setActiveAction={setActiveAction} />
-            </div>
+
+                {
+                    navbarMobile ? 
+                    <NavbarMobile activeAction={activeAction} setActiveAction={setActiveAction} /> :
+                    <NavbarDesktop activeAction={activeAction} setActiveAction={setActiveAction} />
+                }
+                </div>
         </nav>
     )
 }
