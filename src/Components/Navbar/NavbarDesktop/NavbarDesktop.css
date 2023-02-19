@@ -2,60 +2,41 @@ ul#navbar-desktop li {
     list-style: none;
 }
 
-nav {
-    height: 5rem;
-}
-
-nav .nav-content {
-    height: 100%;
-    width: calc(min(95vw, 95rem));
-    margin: auto;
-    border-bottom: var(--light-border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--color-light);
-}
-
-nav .nav-content .actions {
+#navbar-desktop.actions {
     display: flex;
 }
 
-nav .item {
+#navbar-desktop .item {
     min-width: 9rem;
     text-align: center;
 }
 
-nav #nav-content-how-to-test-it {
+#navbar-desktop #nav-content-how-to-test-it {
     margin-left: 0.5rem;
     margin-right: 1rem;
 }
 
-nav #nav-content-how-it-works {
+#navbar-desktop #nav-content-how-it-works {
     margin-right: 0.5rem;
     margin-left: 1rem;
 }
 
-nav .actions p {
+#navbar-desktop.actions li {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     border-radius: 0.5rem;
     /* background-color: var(--background-dark-red); */
 }
 
-nav .actions p:hover {
+#navbar-desktop.actions li:hover {
     background-color: var(--semi-light);
 }
 
-nav .actions p:hover.active{
+#navbar-desktop.actions li:hover.active{
     outline: var(--light-border); 
 }
 
-nav .actions p.active:not(:hover){
+#navbar-desktop.actions li.active:not(:hover){
     background-color: var(--semi-light);
     outline: var(--light-border);
-}
-
-nav .nav-content .item, .company-name {
-    cursor: pointer;
 }
