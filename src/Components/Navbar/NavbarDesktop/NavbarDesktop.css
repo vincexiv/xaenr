@@ -4,13 +4,16 @@ ul#navbar-desktop li {
 
 #navbar-desktop.actions {
     display: flex;
+    margin-right: 7vw;
+    width: max-content;
+    max-width: 50vw;
 }
 
 #navbar-desktop .item {
     min-width: 9rem;
     text-align: center;
 }
-
+/* 
 #navbar-desktop #nav-content-how-to-test-it {
     margin-left: 0.5rem;
     margin-right: 1rem;
@@ -19,9 +22,11 @@ ul#navbar-desktop li {
 #navbar-desktop #nav-content-how-it-works {
     margin-right: 0.5rem;
     margin-left: 1rem;
-}
+} */
 
 #navbar-desktop.actions li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     border-radius: 0.5rem;
