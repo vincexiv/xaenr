@@ -23,9 +23,11 @@ function HowItWorks(){
             <div id="how-it-works-the-parts">
                 <div id="how-it-works-1" className="part">
                     <p className="opening-paragraph m-15">
-                        I came up with a new zero-shot image recognition algorithm.
-                        I know that sounds preposterous and the fact that it looks
-                        promising makes it super interesting.
+                        I am working on a zero-shot image recognition algorithm 
+                        that I am intending to use for medical diagnosis. Right now I am 
+                        at the prototype stage. I'll be deploying the algorithm through an 
+                        API so people can interract with it using this 
+                        interface. If you are interested in how it works, feel free to read along;
                     </p>
 
                     <h2 className="m-15">The Idea</h2>
@@ -54,10 +56,8 @@ function HowItWorks(){
                             </p>
 
                             <p className="m-15 first-paragraph">
-                                Without further information being given, if requested to create the 
-                                image using the pieces provided, there are <b>gazillion</b> possible solutions 
-                                to the problem, and some of the possible solutions you might arrive at 
-                                are as shown below
+                                Without further information being given, there are a <b>gazillion</b> possible 
+                                solutions to this problem. Here are examples;
                             </p>
                         </li>
                     </ol>
