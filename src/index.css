@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   --one-vh: 1.2rem;
-  --min-font-size: 11.33px;
+  --min-font-size: 11.22px;
   --light-border: 0.05rem solid rgb(100, 100, 100);
   --background-dark: rgb(26, 26, 26);
   --background-light: rgb(240, 240, 240);
@@ -31,13 +31,13 @@ body {
   max-height: 80vh;
 }
 
-@media only screen and (min-height: 768px){
+@media only screen and (min-height: 700px){
   :root{
-    font-size: calc(var(--min-font-size) + ((100vh - 768)*(4.67/312))); 
+    font-size: calc(100vh * 5/312); 
   }
 }
 
-@media only screen and (max-height: 768px){
+@media only screen and (max-height: 700px){
   :root {
     font-size: var(--min-font-size);
   }
