@@ -33,7 +33,7 @@ body {
 
 @media only screen and (min-height: 768px){
   :root{
-    font-size: calc(13 + ((100vh - 768)*(3/312))); 
+    font-size: calc(var(--min-font-size) + ((100vh - 768)*(4.67/312))); 
   }
 }
 
