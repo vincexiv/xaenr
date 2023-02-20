@@ -71,7 +71,7 @@ function Home(){
         <div id='matching-btn-container'>
             <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
             <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
-            <Button classList={['btn', 'start-matching-btn']} message="Match" />
+            <Button classList={['btn', 'start-matching-btn']} message="Test" />
         </div>
 
           <SampleItems
