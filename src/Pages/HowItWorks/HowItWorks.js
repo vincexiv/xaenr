@@ -48,12 +48,14 @@ function HowItWorks(){
                                 21 are white. You have been told to get the pieces together 
                                 to create an image whose dimensions are 5 by 5
                             </p>
-                            <p className="m-15">
-                                Here are the 25 pieces;
+                            <div className="m-15">
+                                <p>
+                                    Here are the 25 pieces;
+                                </p>
                                 <div className="m-15">
                                     <Pieces allPiecesCount={25} coloredPiecesCount={4} testOrSolution="test"/>
                                 </div>
-                            </p>
+                            </div>
 
                             <p className="m-15 first-paragraph">
                                 Without further information being given, there are a <b>gazillion</b> possible 

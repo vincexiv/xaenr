@@ -18,13 +18,13 @@ function Pieces({allPiecesCount, coloredPiecesCount, testOrSolution}){
     for(let i = 0; i < allPiecesCount; i++){
         if(i < coloredPiecesCount){
             pieces.push(
-                <div className={`piece-container ${gridAreas[i]}`}>
+                <div key={i} className={`piece-container ${gridAreas[i]}`}>
                     <div className="colored piece"></div>
                 </div>
             )
         }else{
             pieces.push(
-                <div className={`piece-container ${gridAreas[i]}`}>
+                <div key={i} className={`piece-container ${gridAreas[i]}`}>
                     <div className="piece"></div>
                 </div>          
             )
