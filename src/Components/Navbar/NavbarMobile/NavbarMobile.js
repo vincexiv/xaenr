@@ -6,7 +6,7 @@ function NavbarMobile({activeAction, setActiveAction}){
     const checkBox = useRef()
 
     function handleCheckboxClick(e){
-        setShowNavbarOptions(e.target.checked)
+        setTimeout(()=>setShowNavbarOptions(e.target.checked), 200)
     }
 
     function changeActiveAction(newActiveAction){
