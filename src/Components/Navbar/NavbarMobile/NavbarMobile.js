@@ -16,7 +16,7 @@ function NavbarMobile({activeAction, setActiveAction}){
 
     return (
         <div id="navbar-mobile">
-            <label for="check">
+            <label htmlFor="check">
                 <input type="checkbox" id="check" ref={checkBox} onClick={handleCheckboxClick}/> 
                 <span></span>
                 <span></span>
