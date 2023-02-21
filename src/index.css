@@ -28,7 +28,7 @@ body {
   /* border: var(--light-border); */
   padding: 1rem;
   min-height: max-content;
-  max-height: 85vh;
+  max-height: 80vh;
 }
 
 @media only screen and (min-height: 700px){
