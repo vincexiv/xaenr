@@ -12,7 +12,7 @@
 }
 
 #how-it-works .m-15:not(h2) {
-    max-width: max(30vw, 40rem);
+    /* max-width: max(30vw, 40rem); */
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -35,18 +35,21 @@
     margin-top: 5vh;
 }
 
-#how-it-works #how-it-works-the-parts {
+#how-it-works #how-it-works-the-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 45rem;
 }
 
-#how-it-works #how-it-works-1,
-#how-it-works #how-it-works-2 {
-    min-width: 30rem;
+#how-it-works #how-it-works-the-content .item {
+    width: calc(50% - 4rem);
+    min-width: 35rem;
+    margin-right: 2rem;
 }
 
-#how-it-works-2 .solutions {
+#how-it-works-the-content .solutions {
     display: flex;
     gap: 2rem;
     width: max-content;
@@ -84,10 +87,6 @@
         min-height: max-content;
         width: 100vw;
     }
-
-    #how-it-works .m-15 {
-        margin-right: 2rem;
-    }
     
     #how-it-works #how-it-works-the-parts {
         display: flex;
@@ -98,20 +97,9 @@
         gap: 0;
     }
 
-    #how-it-works #how-it-works-1,
-    #how-it-works #how-it-works-2 {
-        min-width: none;
-    }
-
-    #how-it-works-2 .solutions {
+    #how-it-works-the-content .solutions {
         display: grid;
         grid-template-columns: 1fr 1fr;
-    }
-
-    #how-it-works-2 .see-solution-btn-and-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     #how-it-works .see-solution-btn-and-text .text {
