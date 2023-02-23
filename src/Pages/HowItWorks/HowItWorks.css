@@ -21,16 +21,6 @@
     margin-left: 2rem;
 }
 
-#how-it-works .neighbor-value-details {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 0.7rem;
-    width: max-content;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
 #how-it-works.container {
     margin-top: 5vh;
 }
@@ -41,37 +31,10 @@
     gap: 10rem;
 }
 
-#how-it-works #how-it-works-1,
-#how-it-works #how-it-works-2 {
-    min-width: 30rem;
-}
-
-#how-it-works-2 .solutions {
-    display: flex;
-    gap: 2rem;
-    width: max-content;
-    height: max-content;
-    margin-left: 2rem;
-}
-
 #how-it-works .see-solution-btn-and-text{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#how-it-works .see-solution-btn-and-text .text {
-    width: 60%;
-}
-
-#how-it-works .see-solution-btn-and-text .see-solution {
-    display: grid;
-    place-items: center;
-    width: 40%;
-}
-
-#how-it-works .see-solution-span {
-    color: green;
 }
 
 /* RESPONSIVENESS */
