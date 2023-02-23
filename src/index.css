@@ -31,13 +31,13 @@ body {
   max-height: 80vh;
 }
 
-@media only screen and (min-height: 62rem){
+@media only screen and (min-height: 700px){
   :root{
     font-size: calc(100vh * 5/312); 
   }
 }
 
-@media only screen and (max-height: 62rem){
+@media only screen and (max-height: 700px){
   :root {
     font-size: var(--min-font-size);
   }
