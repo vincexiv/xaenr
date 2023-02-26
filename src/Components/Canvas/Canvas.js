@@ -81,7 +81,7 @@ function Canvas({status, setStatus, previousStatus}){
 
     return (
         <div id='canvas-item-and-btn-container'>
-            <canvas id='canvas-item' ref={canvasRef} width={remSize*24} height={remSize*24}/>
+            <canvas id='canvas-item' ref={canvasRef} width={remSize*26} height={remSize*26}/>
             <div className='buttons'>
                 <button className='btn' onClick={clearCanvas}>Clear</button>
                 <button className='btn' onClick={addImageToSample}>Add</button>
