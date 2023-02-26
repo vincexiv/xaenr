@@ -72,37 +72,12 @@
         margin-right: 2rem;
     }
     
-    #how-it-works #how-it-works-the-parts {
+    #how-it-works .the-parts {
         display: flex;
         flex-direction: column;
         align-items: start;
         max-width: 480px;
         width: 80vw;
         gap: 0;
-    }
-
-    #how-it-works #how-it-works-1,
-    #how-it-works #how-it-works-2 {
-        min-width: none;
-    }
-
-    #how-it-works-2 .solutions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #how-it-works-2 .see-solution-btn-and-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #how-it-works .see-solution-btn-and-text .text {
-        width: 80vw;
-    }
-
-    #how-it-works .see-solution-btn-and-text .see-solution {
-        margin-top: 1rem;
-        width: 80vw;
     }
 }
