@@ -67,10 +67,6 @@ function Part2({changeActiveWindow}){
             Go ahead and solve the puzzle. Once you have completed, click on the 
             <span className="see-solution-span"> see solution </span> button.
         </p>
-
-        <div className="see-solution">
-            <Button classList={['see-solution-btn']} message="See Solution" onClick={()=>{changeActiveWindow('window-2')}}/>
-        </div>
     </div>
 
 </div>

@@ -49,22 +49,6 @@ function Part3(){
             <p>
                 The method above falls short in so many ways that I'll be discussing shortly
             </p>
-            <p>
-                If you haven't noticed, the problem above was centered on breaking the image down into overlapping pieces of 9 pixels. 
-                Here are some of the pieces obtained
-            </p>
-
-            <div className="three-by-three-examples">
-                <Solution solutionArray={[0, 0, 0, 0, 0, 1, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 0, 0, 0, 1, 1, 0, 0, 1]}/>
-                <Solution solutionArray={[0, 0, 0, 1, 1, 0, 0, 1, 0]}/>
-                <Solution solutionArray={[0, 0, 1, 0, 0, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 1, 1, 0, 0, 1, 0, 0, 1]}/>
-                <Solution solutionArray={[1, 1, 0, 0, 1, 0, 0, 1, 0]}/>
-                <Solution solutionArray={[0, 0, 0, 0, 0, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 1, 0, 0, 1, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[1, 0, 0, 1, 0, 0, 0, 0, 0]}/>
-            </div>
         </div>
     )
 }

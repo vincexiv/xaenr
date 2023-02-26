@@ -6,6 +6,16 @@
     display: none;
 }
 
+.footer-btns {
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+}
+
+.footer-btns .footer-btn {
+    min-width: 10rem;
+}
+
 #how-it-works h2, #how-it-works h1 {
     margin-top: 1.5rem;
     /* background-color:; */

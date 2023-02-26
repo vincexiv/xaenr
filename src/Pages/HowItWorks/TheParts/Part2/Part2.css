@@ -22,16 +22,6 @@
     margin-left: 2rem;
 }
 
-#how-it-works-2 .see-solution-btn-and-text .text {
-    width: 60%;
-}
-
-#how-it-works-2 .see-solution-btn-and-text .see-solution {
-    display: grid;
-    place-items: center;
-    width: 40%;
-}
-
 #how-it-works-2 .see-solution-span {
     color: green;
 }
