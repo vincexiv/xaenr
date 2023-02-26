@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react'
-import { Routes, Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import HowItWorks from './Pages/HowItWorks/HowItWorks';
@@ -10,7 +10,8 @@ import ContactInfo from './Pages/ContactInfo/ContactInfo';
 
 function App() {
   const navigate = useNavigate()
-  const [activeAction, setActiveAction] = useState(localStorage.getItem('activeAction') || 'home')
+  const location = useLocation()
+  const [activeAction, setActiveAction] = useState(location.pathname || localStorage.getItem('activeAction') || 'home')
   localStorage.setItem('activeAction', activeAction)
 
   useEffect(()=>{
