@@ -19,7 +19,7 @@ function HowItWorks(){
     return (
         <div id="how-it-works" className="container">
             <div id="window-1" className="window">
-                <h1 className="m-15">The Solution</h1>
+                <h1 className="m-15">What's Up</h1>
                 <div className="the-parts">
                     <Part1 />
                     <Part2 changeActiveWindow={changeActiveWindow}/>

@@ -2,8 +2,6 @@
     display: grid;
     width: max-content;
     gap: 0.08rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 #solution.length-25 {

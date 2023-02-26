@@ -6,7 +6,7 @@ function Part1(){
         <div id="how-it-works-1" className="part">
             <p className="opening-paragraph m-15">
                 I am working on a zero-shot image recognition algorithm 
-                that I am intending to use for medical diagnosis. Right now I am 
+                that would have a wide range of use. Right now I am 
                 at the prototype stage. I'll be deploying the algorithm through an 
                 API so people can interract with it using this 
                 interface. If you are interested in how it works, feel free to read along;

@@ -6,7 +6,7 @@
     display: none;
 }
 
-#how-it-works h2 {
+#how-it-works h2, #how-it-works h1 {
     margin-top: 1.5rem;
     /* background-color:; */
 }
