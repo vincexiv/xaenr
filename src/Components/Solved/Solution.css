@@ -1,0 +1,18 @@
+#solution {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: max-content;
+    gap: 0.08rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#solution .piece-container .piece {
+    background-color: white;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+#solution .piece-container .piece.colored {
+    background-color: green;
+}
