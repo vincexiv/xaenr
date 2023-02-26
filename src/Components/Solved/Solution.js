@@ -23,7 +23,7 @@ function Solution({solutionArray}){
     console.log(solutionPieces)
 
     return (
-        <div id="solution">
+        <div id="solution" className={`length-${solutionArray?.length}`}>
             {
                 solutionPieces
             }

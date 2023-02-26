@@ -1,10 +1,21 @@
 #solution {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     width: max-content;
     gap: 0.08rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+#solution.length-25 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#solution.length-9 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#solution.length-4 {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 #solution .piece-container .piece {
