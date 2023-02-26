@@ -43,8 +43,7 @@ function Part3(){
                 it more if we could use this approach to identify flipped, rotated, or slightly distorted versions of an image. Thus, 
                 we need to use rules that force the final pieces obtained to be exactly similar for all versions of an image we are interested 
                 in. That is, if you pick an image and break it down using the rules, you will get the same exact pieces you will get for a rotated 
-                or flipped version of that image. We would also make it such that the level of similarity between pieces obtained is correlated 
-                with how much the image has been distorted in terms of color or shape
+                or flipped version of that image.
             </p>
             <p>
                 The method above falls short in so many ways that I'll be discussing shortly
