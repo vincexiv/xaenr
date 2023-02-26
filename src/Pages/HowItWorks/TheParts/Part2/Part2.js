@@ -65,7 +65,7 @@ function Part2({changeActiveWindow}){
     <div className="m-top-1 see-solution-btn-and-text">
         <p className="text">
             Go ahead and solve the puzzle. Once you have completed, click on the 
-            <span className="see-solution-span"> see solution </span> button.
+            <span className="see-solution-span"> Next </span> button.
         </p>
     </div>
 

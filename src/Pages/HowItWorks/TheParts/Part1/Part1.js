@@ -15,7 +15,7 @@ function Part1(){
             <h2 className="m-15">The Idea</h2>
             <p className="m-15">
                 Think of it like a jig-saw puzzle. Try to solve the following
-                puzzle and once done, click on the <span className="see-solution-span">see solution </span>
+                puzzle and once done, click on the <span className="see-solution-span">next </span>
                 link to see the solution plus a further discussion of the idea
             </p>
 
