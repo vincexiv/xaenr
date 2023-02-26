@@ -1,7 +1,3 @@
-#navbar-mobile {
-    margin-right: 7vw;
-}
-
 #navbar-mobile label{
     display:flex;
     flex-direction:column;
