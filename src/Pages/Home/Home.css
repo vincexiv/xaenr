@@ -1,0 +1,39 @@
+#home.container {
+    position: relative;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+
+}
+
+#home .home-content {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    top: 70%;
+    /* width: max-content; */
+    height: 70%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#home #hello-there {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#home #welcome-to-xaenr {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#home p {
+    text-align: right;
+    margin: 0.5rem;
+}
+
+#home .link {
+    cursor: pointer;
+    color: green;
+}

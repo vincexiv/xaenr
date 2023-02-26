@@ -22,12 +22,12 @@ function App() {
     <>
       <Navbar activeAction={activeAction} setActiveAction={setActiveAction}/>
       <Routes>
-          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/home" element={<Home setActiveAction={setActiveAction}/>} />
           <Route exact path="/how-it-works" element={<HowItWorks />} />
           <Route exact path="/how-to-test-it" element={<HowToTestIt />} />
           <Route exact path="/test-it" element={<TestIt />} />
           <Route exact path="/contact-info" element={<ContactInfo />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setActiveAction={setActiveAction} />} />
       </Routes>
     </>
   );
