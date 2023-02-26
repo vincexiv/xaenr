@@ -4,7 +4,7 @@ import Pieces from "../../../../Components/Pieces/Pieces";
 import NeighborPieces from "../../../../Components/NeighborPieces/NeighborPieces";
 import "./Part2.css"
 
-function Part2(){
+function Part2({changeActiveWindow}){
     const values = [
         [0, 0, 1, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 1, 1, 0, 0, 1, 0],
@@ -69,7 +69,7 @@ function Part2(){
         </p>
 
         <div className="see-solution">
-            <Button classList={['see-solution-btn']} message="See Solution"/>
+            <Button classList={['see-solution-btn']} message="See Solution" onClick={()=>{changeActiveWindow('window-2')}}/>
         </div>
     </div>
 
