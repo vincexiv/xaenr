@@ -18,8 +18,8 @@ function NavbarDesktop({activeAction, setActiveAction}){
                 How It Works
             </li>
 
-            <li id='nav-content-how-to-test-it'
-                className={activeAction == 'how-to-test-it'? 'active item': 'item'}
+            <li id='nav-content-test-it'
+                className={activeAction == 'test-it'? 'active item': 'item'}
                 onClick={()=>setActiveAction('test-it')}>
                 Test It
             </li>
