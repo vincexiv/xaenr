@@ -1,5 +1,6 @@
 #canvas-item-and-btn-container {
     width: max-content;
+    margin: auto;
 }
 
 #canvas-item-and-btn-container #canvas-item {

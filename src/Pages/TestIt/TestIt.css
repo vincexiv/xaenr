@@ -81,7 +81,6 @@
         width: calc(100% - 2*max(1vw, 1rem));
         margin-top: 1.5rem;
         margin-bottom: 3rem;
-        margin-right: 2rem;
     }
 
     #test-it #matching-btn-container .btn {
@@ -107,15 +106,12 @@
             "a a"
             "a a"
             "a a"
-            "b f"
-            "b f"
-            "b ."
-            "c g"
-            "c g"
-            "c ."
+            "b c"
+            "b c"
             "d e"
-            "d ."
-            "d ."
+            "d e"
+            "f g"
+            "f g"
     }
 
     #test-it .canvas-item-container {
@@ -128,6 +124,5 @@
 
     #test-it #matching-btn-container {
         flex-direction: column;
-        width: 100%;
     }
 }
