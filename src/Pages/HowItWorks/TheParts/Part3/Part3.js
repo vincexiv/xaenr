@@ -42,8 +42,7 @@ function Part3(){
                 In our puzzle, you will always end up constructing the exact image shown previously. That's not interesting. We would love 
                 it more if we could use this approach to identify flipped, rotated, or slightly distorted versions of an image. Thus, 
                 we need to use rules that force the final pieces obtained to be exactly similar for all versions of an image we are interested 
-                in. That is, if you pick an image and break it down using the rules, you will get the same exact pieces you will get for a rotated 
-                or flipped version of that image.
+                in.
             </p>
             <p>
                 The method above falls short in so many ways that I'll be discussing shortly
