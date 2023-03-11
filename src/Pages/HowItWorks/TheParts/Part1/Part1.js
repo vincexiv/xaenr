@@ -5,7 +5,7 @@ function Part1(){
     return (
         <div id="how-it-works-1" className="part">
             <p className="opening-paragraph m-15">
-                I am working on a zero-shot image recognition algorithm 
+                I am working on a one-shot image recognition algorithm 
                 that would have a wide range of use. Right now I am 
                 at the prototype stage. I'll be deploying the algorithm through an 
                 API so people can interract with it using this 
