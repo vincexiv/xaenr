@@ -68,7 +68,7 @@
 
     #test-it .canvas-item-container {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
     }
     
     #test-it .decorative {

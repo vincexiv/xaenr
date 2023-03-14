@@ -9,7 +9,7 @@
 .footer-btns {
     display: flex;
     gap: 2rem;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .footer-btns .footer-btn {
@@ -63,7 +63,7 @@
         position: static;
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         min-height: max-content;
         width: 100vw;
     }
@@ -75,7 +75,7 @@
     #how-it-works .the-parts {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         max-width: 480px;
         width: 80vw;
         gap: 0;
