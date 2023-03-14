@@ -45,6 +45,18 @@ function TestIt(){
         changeBtnColor(e)
         setStatus(previousStatus.current)
     }
+
+    function updateResultImages(){
+      const newImage = status.sampleImages[status.activeSample]
+      setStatus(status => {
+        return (
+          {
+            ...status,
+            resultImages: [newImage, 2]
+          }
+        )
+      })
+    }
       
     return (
       <div id="test-it" className='container'>
@@ -70,7 +82,7 @@ function TestIt(){
         <div id='matching-btn-container'>
             <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
             <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
-            <Button classList={['btn', 'start-matching-btn']} message="Test" />
+            <Button classList={['btn', 'start-matching-btn']} message="Test" onClick={updateResultImages}/>
         </div>
 
           <SampleItems
