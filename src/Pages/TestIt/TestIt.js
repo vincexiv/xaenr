@@ -61,6 +61,12 @@ function TestIt(){
     }
       
     return (
+      <>
+      <div className="container">
+        <div>
+          <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="See How to Test It"/>
+        </div>
+      </div>
       <div id="test-it" className='container'>
         <div className='canvas-item-container'>
           <Canvas
@@ -96,6 +102,7 @@ function TestIt(){
 
         </div> */}
       </div>
+      </>
     )
 }
 
