@@ -1,0 +1,20 @@
+#how-it-works--part-3 .problem-and-solution {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#how-it-works--part-3 .two-by-two-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: max(20vw, 30rem);
+
+}
+
+#how-it-works--part-3 .arrow-and-content {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}

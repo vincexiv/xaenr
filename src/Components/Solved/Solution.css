@@ -1,6 +1,7 @@
 #solution {
     display: grid;
     width: max-content;
+    height: max-content;
     gap: 0.08rem;
 }
 
