@@ -6,21 +6,15 @@ function Part4(){
     return (
         <div>
             <p>
-                If you haven't noticed, the problem above was centered on breaking the image down into overlapping pieces of 9 pixels. 
-                Here are some of the pieces obtained
+                This is only one way to break down the image. It was a very simplistic approach and it falls short in so
+                 many ways that I'll be discussing shortly
             </p>
-
-            <div className="three-by-three-examples">
-                <Solution solutionArray={[0, 0, 0, 0, 0, 1, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 0, 0, 0, 1, 1, 0, 0, 1]}/>
-                <Solution solutionArray={[0, 0, 0, 1, 1, 0, 0, 1, 0]}/>
-                <Solution solutionArray={[0, 0, 1, 0, 0, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 1, 1, 0, 0, 1, 0, 0, 1]}/>
-                <Solution solutionArray={[1, 1, 0, 0, 1, 0, 0, 1, 0]}/>
-                <Solution solutionArray={[0, 0, 0, 0, 0, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[0, 1, 0, 0, 1, 0, 0, 0, 0]}/>
-                <Solution solutionArray={[1, 0, 0, 1, 0, 0, 0, 0, 0]}/>
-            </div>
+            <p>
+                One of its weaknesses is that one will end up constructing an upright 7 value like the solution provided 
+                previously. That's not interesting. We would love it more if we could use this approach to identify flipped, 
+                rotated, or slightly distorted versions of an image. Thus, we need to use rules that force the final pieces 
+                obtained to be exactly similar for all versions of an image we are interested in.
+            </p>
             <h2>To be continued...</h2>
         </div>
 
