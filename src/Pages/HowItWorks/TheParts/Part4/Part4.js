@@ -6,7 +6,7 @@ function Part4(){
     const solutionArray = [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 
     return (
-        <div id="how-it-works--part-3">
+        <div id="how-it-works--part-4">
             <p>
                 This is only one way to break down the image. It was a very simplistic approach and it falls short in so
                  many ways that I'll be discussing shortly
@@ -65,19 +65,22 @@ function Part4(){
                 <div className="arrow-and-content">
 
                 <div className="arrow-down"> &#8594;</div>
-                <div className="two-by-two-examples">
-                <Solution solutionArray={[-1, 1, 0, 0]}/>
-                <Solution solutionArray={[1, -1, 0, 0]}/>
-                <Solution solutionArray={[1, 1, -1, 0]}/>
-                <Solution solutionArray={[1, 1, 0, -1]}/>
-                </div>
+                    <div className="two-by-two-examples">
+                        <Solution solutionArray={[-1, 1, 0, 0]}/>
+                        <Solution solutionArray={[1, -1, 0, 0]}/>
+                        <Solution solutionArray={[1, 1, -1, 0]}/>
+                        <Solution solutionArray={[1, 1, 0, -1]}/>
+                    </div>
                 </div>
 
             </div>
             <p>
                 Then we find the sum of the values in each piece
             </p>
-            <h2>To be continued...</h2>
+            <p>
+                The green pieces here represent a value of 1, while the white ones represent 0. They can be any values though. 
+                They can even be values between 0 and 255 or whatever. The 0 and 1 here is just to simplify our work
+            </p>
         </div>
 
     )

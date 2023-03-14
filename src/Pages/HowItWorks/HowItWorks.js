@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import "./HowItWorks.css"
-import NeighborPieces from "../../Components/NeighborPieces/NeighborPieces";
-import Pieces from "../../Components/Pieces/Pieces";
 import Button from "../../Components/Button/Button";
 import Part1 from "./TheParts/Part1/Part1";
 import Part2 from "./TheParts/Part2/Part2";
 import Part3 from "./TheParts/Part3/Part3";
 import Part4 from "./TheParts/Part4/Part4";
+import Part5 from "./TheParts/Part5/Part5";
+import Part6 from "./TheParts/Part6/Part6";
 
 function HowItWorks(){
     const [activeWindow, setActiveWindow] = useState(1)
@@ -39,6 +39,14 @@ function HowItWorks(){
                 <div className="the-parts">
                     <Part3 />
                     <Part4 />
+                </div>
+            </div>
+
+            <div id="window-3" className="window display-none">
+                <h1 className="m-15">The Solution</h1>
+                <div className="the-parts">
+                    <Part5 />
+                    <Part6 />
                 </div>
             </div>
 
