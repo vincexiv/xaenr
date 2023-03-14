@@ -26,3 +26,7 @@
 #solution .piece-container .piece.colored {
     background-color: green;
 }
+
+#solution .piece-container .piece.nothing {
+    background-color: transparent;
+}

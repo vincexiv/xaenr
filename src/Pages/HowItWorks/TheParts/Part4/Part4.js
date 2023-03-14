@@ -17,8 +17,14 @@ function Part4(){
                 rotated, or slightly distorted versions of an image. Thus, we need to use rules that force the final pieces 
                 obtained to be exactly similar for all versions of an image we are interested in.
             </p>
+            <h2>Approach 1</h2>
             <p>
-                Another approach is to instead break down the image into overlapping pieces of four pixels
+                Here, we are trying to make it possible to reconstruct a rotated version of the original image given the pieces. 
+                One approach is to break down the image into overlapping pieces of four pixes in stead of 9 followed by the steps
+                 that will be shown shortly.
+            </p>
+            <p>
+                First, we break down the image into overlapping pieces of 4 pixels
             </p>
             <div className="problem-and-solution">
                 <div>
@@ -51,6 +57,26 @@ function Part4(){
                     </div>
                 </div>
             </div>
+            <p>
+                Then we break down the pieces further into overlapping pieces of 3 pixels. Here is an example
+            </p>
+            <div className="problem-and-solution">
+                <Solution solutionArray={[1, 1, 0, 0]}/>
+                <div className="arrow-and-content">
+
+                <div className="arrow-down"> &#8594;</div>
+                <div className="two-by-two-examples">
+                <Solution solutionArray={[-1, 1, 0, 0]}/>
+                <Solution solutionArray={[1, -1, 0, 0]}/>
+                <Solution solutionArray={[1, 1, -1, 0]}/>
+                <Solution solutionArray={[1, 1, 0, -1]}/>
+                </div>
+                </div>
+
+            </div>
+            <p>
+                Then we find the sum of the values in each piece
+            </p>
             <h2>To be continued...</h2>
         </div>
 
