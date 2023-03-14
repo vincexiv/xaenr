@@ -4,7 +4,7 @@ import SampleItems from '../../Components/SampleItems/SampleItems';
 import Button from "../../Components/Button/Button";
 import "./TestIt.css"
 
-function TestIt(){
+function TestIt({setActiveAction}){
     const defaultState = {
         activeSample: null,
         sampleImages: [1, 2, 3],
@@ -64,7 +64,7 @@ function TestIt(){
       <>
       <div className="container">
         <div>
-          <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="See How to Test It"/>
+          <Button classList={['btn', 'go-to-how-to-test-it']} onClick={()=>setActiveAction('how-to-test-it')} message="See How to Test It"/>
         </div>
       </div>
       <div id="test-it" className='container'>
