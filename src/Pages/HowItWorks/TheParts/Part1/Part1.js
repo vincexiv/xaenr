@@ -6,7 +6,8 @@ function Part1(){
         <div id="how-it-works-1" className="part">
             <p className="opening-paragraph m-15">
                 I am working on a one-shot image recognition algorithm 
-                that would have a wide range of use. Right now I am 
+                that I am planning to use for medical diagnosis. It will possibly be used 
+                in a lot of other places though. Right now I am 
                 at the prototype stage. I'll be deploying the algorithm through an 
                 API so people can interract with it using this 
                 interface. If you are interested in how it works, feel free to read along;
