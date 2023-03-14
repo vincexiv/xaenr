@@ -25,30 +25,26 @@ function Part6(){
             </p>
             <div className="the-pieces">
                 <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
-                <ToThreePixels fourNumberArray={[0, 0, 0, 1]}/>
-                <ToThreePixels fourNumberArray={[0, 0, 1, 1]}/>
-                <ToThreePixels fourNumberArray={[0, 0, 1, 0]}/>
-
-                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
                 <ToThreePixels fourNumberArray={[0, 1, 0, 0]}/>
-                <ToThreePixels fourNumberArray={[1, 1, 0, 1]}/>
-                <ToThreePixels fourNumberArray={[1, 0, 1, 0]}/>
-
-                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
-                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
                 <ToThreePixels fourNumberArray={[0, 1, 0, 1]}/>
-                <ToThreePixels fourNumberArray={[1, 0, 1, 0]}/>
-
                 <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 1, 0]}/>
                 <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
                 <ToThreePixels fourNumberArray={[0, 1, 0, 0]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 0, 1]}/>
+                <ToThreePixels fourNumberArray={[1, 0, 1, 0]}/>
+                <ToThreePixels fourNumberArray={[1, 0, 1, 0]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 1, 1]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
+                <ToThreePixels fourNumberArray={[0, 0, 0, 0]}/>
                 <ToThreePixels fourNumberArray={[1, 0, 0, 0]}/>
+                <ToThreePixels fourNumberArray={[1, 1, 0, 1]}/>
             </div>
             <p>
                 You are told that each group of 4, can be used to create a 4 pixels piece, that will in turn be used 
-                to recreate the original image.
+                to recreate the original image whose dimensions are 5 by 5.
             </p>
-            <h2>To be continued...</h2>
         </div>
     )
 }

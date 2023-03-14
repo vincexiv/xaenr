@@ -7,6 +7,8 @@ import Part3 from "./TheParts/Part3/Part3";
 import Part4 from "./TheParts/Part4/Part4";
 import Part5 from "./TheParts/Part5/Part5";
 import Part6 from "./TheParts/Part6/Part6";
+import Part8 from "./TheParts/Part8/Part8";
+import Part7 from "./TheParts/Part7/Part7";
 
 function HowItWorks(){
     const [activeWindow, setActiveWindow] = useState(1)
@@ -47,6 +49,14 @@ function HowItWorks(){
                 <div className="the-parts">
                     <Part5 />
                     <Part6 />
+                </div>
+            </div>
+
+            <div id="window-4" className="window display-none">
+                <h1 className="m-15">The Solution</h1>
+                <div className="the-parts">
+                    <Part7 />
+                    <Part8 />
                 </div>
             </div>
 
