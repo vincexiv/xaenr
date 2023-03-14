@@ -39,6 +39,8 @@ function TestIt(){
     
           setStatus(status => ({...status, sampleImages: newSampleImages }))
         }
+
+        updateResultImages()
     }
     
     function undoChange(e){
