@@ -15,20 +15,8 @@ function Canvas({status, setStatus, previousStatus}){
 
         window.addEventListener('resize', resize)
 
-        if (navigator.userAgent.match(/Android/i)
-                || navigator.userAgent.match(/webOS/i)
-                || navigator.userAgent.match(/iPhone/i)
-                || navigator.userAgent.match(/iPad/i)
-                || navigator.userAgent.match(/iPod/i)
-                || navigator.userAgent.match(/BlackBerry/i)
-                || navigator.userAgent.match(/Windows Phone/i)) {
-            canv.addEventListener('keydown', (e)=>startedDrawing(e, ctx))
-            canv.addEventListener('keydown', (e)=>finishedDrawing(e, ctx))
-        } else {
-            
-            canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
-            canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
-        }
+        canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
+        canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
         canv.addEventListener('mousemove', (e)=>draw(e, ctx))
     })
 
