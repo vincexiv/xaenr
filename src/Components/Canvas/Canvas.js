@@ -41,6 +41,13 @@ function Canvas({status, setStatus, previousStatus}){
         setImage(canvasRef.current.toDataURL())
     }
 
+    function paint(ctx, x, y){
+        ctx.lineTo(x, y)
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(x, y)
+    }
+
     function draw(e, ctx){
         if(!drawing) return 
         const rect = ctx.canvas.getBoundingClientRect()
@@ -52,10 +59,19 @@ function Canvas({status, setStatus, previousStatus}){
         ctx.strokeStyle = 'black'
         ctx.fillStyle = 'black'
 
-        ctx.lineTo(x, y)
-        ctx.stroke()
-        ctx.beginPath()
-        ctx.moveTo(x, y)
+        if(x && y){
+            paint(ctx, x, y)
+        }else{
+            for(const key in e.touches){
+                const x = e.touches[key].clientX - rect.left
+                const y = e.touches[key].clientY - rect.top
+
+                if(x && y){
+
+                    paint(ctx, x, y)
+                }
+            }
+        }
     }
 
     function clearCanvas(){
