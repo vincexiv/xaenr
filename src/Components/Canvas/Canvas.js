@@ -16,7 +16,11 @@ function Canvas({status, setStatus, previousStatus}){
         window.addEventListener('resize', resize)
 
         canv.addEventListener('mousedown', (e)=>startedDrawing(e, ctx))
+        canv.addEventListener('touchstart', (e)=>startedDrawing(e, ctx))
+        
         canv.addEventListener('mouseup', (e)=>finishedDrawing(e, ctx))
+        canv.addEventListener('touchend', (e)=>finishedDrawing(e, ctx))
+        
         canv.addEventListener('mousemove', (e)=>draw(e, ctx))
         canv.addEventListener('touchmove', (e)=>draw(e, ctx))
     })
