@@ -11,6 +11,16 @@
         "a a a a a e e f f g g";
 }
 
+.btn-container {
+    display: grid;
+    place-items: center;
+}
+
+.btn-container .btn {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
 #test-it .decorative {
     grid-area: h;
     height: 2rem;
