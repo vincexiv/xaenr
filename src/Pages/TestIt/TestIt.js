@@ -49,7 +49,12 @@ function TestIt({setActiveAction}){
     }
 
     function updateResultImages(){
-      const newImage = status.sampleImages[status.activeSample]
+      let newImage = status.sampleImages[status.activeSample]
+
+      if(!newImage){
+        newImage = status.sampleImages.find(image => typeof(image) === 'string')
+      }
+
       setStatus(status => {
         return (
           {
