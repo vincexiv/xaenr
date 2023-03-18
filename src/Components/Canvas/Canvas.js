@@ -49,6 +49,8 @@ function Canvas({status, setStatus, previousStatus}){
     }
 
     function draw(e, ctx){
+        e.preventDefault()
+        
         if(!drawing) return 
         const rect = ctx.canvas.getBoundingClientRect()
         const x = e.clientX - rect.left
