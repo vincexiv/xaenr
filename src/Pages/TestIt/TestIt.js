@@ -2,6 +2,7 @@ import React, {useRef, useState} from "react";
 import Canvas from '../../Components/Canvas/Canvas'
 import SampleItems from '../../Components/SampleItems/SampleItems';
 import Button from "../../Components/Button/Button";
+import { apiHost } from "../../variables";
 import "./TestIt.css"
 
 function TestIt({setActiveAction}){
@@ -52,7 +53,14 @@ function TestIt({setActiveAction}){
       let newImage = status.sampleImages[status.activeSample]
 
       if(!newImage){
-        newImage = status.sampleImages.find(image => typeof(image) === 'string')
+        newImage = status.sampleImages.find((image, index) => {
+          if(typeof(image) === 'string'){
+            setStatus({...status, activeSample: index})
+            return true
+          }else{
+            return false
+          }
+        })
       }
 
       setStatus(status => {
@@ -62,6 +70,16 @@ function TestIt({setActiveAction}){
             resultImages: [newImage, 2]
           }
         )
+      })
+    }
+
+    function handleTestClick(){
+      updateResultImages()
+      
+      fetch(`${apiHost}/get-match`, {
+        method: 'GET',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({})
       })
     }
       
@@ -95,7 +113,7 @@ function TestIt({setActiveAction}){
         <div id='matching-btn-container'>
             <Button classList={['btn', 'clear-btn']} onClick={clearInputs} message="Clear"/>
             <Button classList={['btn', 'undo-btn']} onClick={undoChange} message="Undo"/>
-            <Button classList={['btn', 'start-matching-btn']} message="Test" onClick={updateResultImages}/>
+            <Button classList={['btn', 'start-matching-btn']} message="Test" onClick={handleTestClick}/>
         </div>
 
           <SampleItems
