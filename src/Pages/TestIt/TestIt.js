@@ -75,11 +75,19 @@ function TestIt({setActiveAction}){
 
     function handleTestClick(){
       updateResultImages()
+
+      const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)
       
       fetch(`${apiHost}/get-match`, {
-        method: 'GET',
+        method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({})
+        body: JSON.stringify({
+          ref_sample: status.resultImages[0],
+          test_samples: testSamples
+        })
+      })
+      .then(res => {
+        console.log(res)
       })
     }
       
