@@ -40,8 +40,6 @@ function TestIt({setActiveAction}){
     
           setStatus(status => ({...status, sampleImages: newSampleImages }))
         }
-
-        updateResultImages()
     }
     
     function undoChange(e){
@@ -53,14 +51,7 @@ function TestIt({setActiveAction}){
       let newImage = status.sampleImages[status.activeSample]
 
       if(!newImage){
-        newImage = status.sampleImages.find((image, index) => {
-          if(typeof(image) === 'string'){
-            setStatus({...status, activeSample: index})
-            return true
-          }else{
-            return false
-          }
-        })
+        newImage = status.sampleImages.find(image => typeof(image) === 'string')
       }
 
       setStatus(status => {
@@ -74,6 +65,15 @@ function TestIt({setActiveAction}){
     }
 
     function handleTestClick(){
+      status.sampleImages.find((image, index) => {
+        if(typeof(image) === 'string'){
+          setStatus({...status, activeSample: index})
+          return true
+        }else{
+          return false
+        }
+      })
+      
       updateResultImages()
 
       const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)
