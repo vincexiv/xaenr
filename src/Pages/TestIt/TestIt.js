@@ -64,31 +64,45 @@ function TestIt({setActiveAction}){
       })
     }
 
-    function handleTestClick(){
-      status.sampleImages.find((image, index) => {
-        if(typeof(image) === 'string'){
-          setStatus({...status, activeSample: index})
-          return true
-        }else{
-          return false
-        }
-      })
-      
-      updateResultImages()
-
-      const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)
-      
+    function getMatch(refSample, testSamples){
       fetch(`${apiHost}/get-match`, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          ref_sample: status.resultImages[0],
+          ref_sample: refSample,
           test_samples: testSamples
         })
       })
       .then(res => {
         console.log(res)
       })
+    }
+
+    function handleTestClick(){
+      let refSample
+      let testSamples
+
+      if(!status.activeSample){
+        status.sampleImages.find((image, firstImageIndex) => {
+          if(typeof(image) === 'string'){
+            setStatus(status => {
+              refSample = status.sampleImages.filter((sammpleImage, index) => index !== firstImageIndex)
+              testSamples = status.sampleImages.filter((sammpleImage, index) => index === firstImageIndex)
+              getMatch(refSample, testSamples)
+              return {...status, activeSample: firstImageIndex}
+            })
+            return true
+          }else{
+            return false
+          }
+        })
+      }else{
+        refSample = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)
+        testSamples = status.sampleImages.filter((sammpleImage, index) => index === status.activeSample)  
+        getMatch(refSample, testSamples)         
+      }
+      
+      updateResultImages()
     }
       
     return (
