@@ -79,15 +79,12 @@ function TestIt({setActiveAction}){
     }
 
     function handleTestClick(){
-      let refSample
-      let testSamples
-
       if(!status.activeSample){
         status.sampleImages.find((image, firstImageIndex) => {
           if(typeof(image) === 'string'){
             setStatus(status => {
-              refSample = status.sampleImages.filter((sammpleImage, index) => index !== firstImageIndex)
-              testSamples = status.sampleImages.filter((sammpleImage, index) => index === firstImageIndex)
+              const refSample = status.sampleImages.find((sammpleImage, index) => index === firstImageIndex)
+              const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== firstImageIndex)
               getMatch(refSample, testSamples)
               return {...status, activeSample: firstImageIndex}
             })
@@ -97,8 +94,8 @@ function TestIt({setActiveAction}){
           }
         })
       }else{
-        refSample = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)
-        testSamples = status.sampleImages.filter((sammpleImage, index) => index === status.activeSample)  
+        const refSample = status.sampleImages.find((sammpleImage, index) => index === status.activeSample)
+        const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)  
         getMatch(refSample, testSamples)         
       }
       
@@ -107,11 +104,6 @@ function TestIt({setActiveAction}){
       
     return (
       <>
-      <div className="container">
-        <div className="btn-container">
-          <Button classList={['btn', 'go-to-how-to-test-it']} onClick={()=>setActiveAction('how-to-test-it')} message="See How to Test It"/>
-        </div>
-      </div>
       <div id="test-it" className='container'>
         <div className='canvas-item-container'>
           <Canvas
