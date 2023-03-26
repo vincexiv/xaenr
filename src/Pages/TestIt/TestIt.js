@@ -47,24 +47,7 @@ function TestIt(){
         setStatus(previousStatus.current)
     }
 
-    function updateResultImages(){
-      let newImage = status.sampleImages[status.activeSample]
-
-      if(!newImage){
-        newImage = status.sampleImages.find(image => typeof(image) === 'string')
-      }
-
-      setStatus(status => {
-        return (
-          {
-            ...status,
-            resultImages: [newImage, 2]
-          }
-        )
-      })
-    }
-
-    function getMatch(refSample, testSamples){
+    function getMatch(activeSample, refSample, testSamples){
       fetch(`${apiHost}/get-match`, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
@@ -76,8 +59,8 @@ function TestIt(){
       .then(res => {
         if(res.ok){
           res.json().then(data => {
-            const newResult = [status.sampleImages[status.activeSample], data]
-            setStatus(status => ({...status, resultImages: newResult}))
+            const newResult = [status.sampleImages[activeSample], data]
+            setStatus(status => ({...status, activeSample: activeSample, resultImages: newResult}))
           })
         }
       })
@@ -87,13 +70,10 @@ function TestIt(){
       if(!status.activeSample){
         status.sampleImages.find((image, firstImageIndex) => {
           if(typeof(image) === 'string'){
-            setStatus(status => {
               const refSample = status.sampleImages.find((sammpleImage, index) => index === firstImageIndex)
               const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== firstImageIndex)
-              getMatch(refSample, testSamples)
-              return {...status, activeSample: firstImageIndex}
-            })
-            return true
+              getMatch(firstImageIndex, refSample, testSamples)
+              return true
           }else{
             return false
           }
@@ -101,10 +81,8 @@ function TestIt(){
       }else{
         const refSample = status.sampleImages.find((sammpleImage, index) => index === status.activeSample)
         const testSamples = status.sampleImages.filter((sammpleImage, index) => index !== status.activeSample)  
-        getMatch(refSample, testSamples)         
-      }
-      
-      updateResultImages()
+        getMatch(status.activeSample, refSample, testSamples)         
+      }      
     }
       
     return (
