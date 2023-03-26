@@ -11,6 +11,7 @@
     border: var(--light-border);
     border-radius: 0.5rem;
     background-color: var(--semi-light);
+    color: transparent;
 }
 
 .sample-items-sample-item {
