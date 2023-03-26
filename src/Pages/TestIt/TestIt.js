@@ -5,7 +5,7 @@ import Button from "../../Components/Button/Button";
 import { apiHost } from "../../variables";
 import "./TestIt.css"
 
-function TestIt({setActiveAction}){
+function TestIt(){
     const defaultState = {
         activeSample: null,
         sampleImages: [1, 2, 3],
@@ -74,7 +74,12 @@ function TestIt({setActiveAction}){
         })
       })
       .then(res => {
-        console.log(res)
+        if(res.ok){
+          res.json().then(data => {
+            const newResult = [status.sampleImages[status.activeSample], data]
+            setStatus(status => ({...status, resultImages: newResult}))
+          })
+        }
       })
     }
 
