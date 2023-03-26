@@ -48,6 +48,9 @@ function TestIt(){
     }
 
     function getMatch(activeSample, refSample, testSamples){
+      setStatus(status => ({...status, activeSample: activeSample,
+        resultImages: [status.sampleImages[activeSample], 2]}))          
+
       fetch(`${apiHost}/get-match`, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
@@ -57,11 +60,22 @@ function TestIt(){
         })
       })
       .then(res => {
-        if(res.ok){
-          res.json().then(data => {
-            const newResult = [status.sampleImages[activeSample], data]
-            setStatus(status => ({...status, activeSample: activeSample, resultImages: newResult}))
-          })
+        const newResultImages = [status.sampleImages[activeSample]]
+        try {
+          if(res.ok){
+            res.json().then(data => {
+              setStatus(status => ({...status, activeSample: activeSample,
+                                    resultImages: [...newResultImages, data]}))
+            })
+          }else{
+            res.json().then(error => {
+              console.warn(error)
+              setStatus(status => ({...status, activeSample: activeSample,
+                                    resultImages: [...newResultImages, 2]}))
+            })
+          }        
+        } catch (error) {
+          console.warn(error)
         }
       })
     }
