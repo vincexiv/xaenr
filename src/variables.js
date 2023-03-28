@@ -1,3 +1,3 @@
-const apiHost = "http://127.0.0.1:5000"
+const apiHost = "https://xaenr-api.onrender.com"
 
 export {apiHost}
