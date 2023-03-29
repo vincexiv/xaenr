@@ -25,10 +25,8 @@ body {
 .container {
   margin: auto;
   max-width: calc(min(95vw, 95rem));
-  /* border: var(--light-border); */
   padding: 1rem;
   min-height: max-content;
-  max-height: 80vh;
 }
 
 @media only screen and (min-height: 700px){
