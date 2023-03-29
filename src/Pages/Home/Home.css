@@ -1,6 +1,6 @@
 #home.container {
     position: relative;
-    height: 80vh;
+    height: 90vh;
     display: grid;
     place-items: center;
 
@@ -11,10 +11,10 @@
     margin: 0;
     padding: 0;
     left: 50%;
-    top: 70%;
+    top: 50%;
     /* width: max-content; */
-    height: 70%;
-    transform: translate(-50%, -50%);
+    height: max-content;
+    transform: translate(-50%, calc(-50% - 2vh));
     color: white;
 }
 
