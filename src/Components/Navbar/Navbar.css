@@ -1,10 +1,12 @@
 nav {
     height: 5rem;
+    max-width: 80vw;
+    margin: auto;
 }
 
 nav .nav-content {
     height: 100%;
-    width: calc(min(95vw, 95rem));
+    width: calc(min(80vw, 95rem));
     margin: auto;
     border-bottom: var(--light-border);
     display: flex;
