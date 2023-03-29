@@ -12,7 +12,7 @@ function NavbarDesktop({activeAction, setActiveAction}){
                 Home
             </li>
 
-            <li id='nav-content-how-it-works'
+            {/* <li id='nav-content-how-it-works'
                 className={activeAction === 'how-it-works'? 'active item': 'item'}
                 onClick={()=>setActiveAction('how-it-works')}>
                 How It Works
@@ -28,7 +28,7 @@ function NavbarDesktop({activeAction, setActiveAction}){
                 className={activeAction === 'test-it'? 'active item': 'item'}
                 onClick={()=>setActiveAction('test-it')}>
                 Test It
-            </li>
+            </li> */}
 
             <li id='nav-content-contact-info'
                 className={activeAction === 'contact-info'? 'active item': 'item'}
