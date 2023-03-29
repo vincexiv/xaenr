@@ -42,7 +42,7 @@
 #navbar-mobile input[type="checkbox"]:checked ~ span:nth-of-type(3){
     transform-origin:bottom;
     width:50%;
-    transform: translate(0.9rem,-0.33rem) rotatez(45deg);
+    transform: translate(0.9rem,-0.24rem) rotatez(45deg);
 }
 
 #navbar-mobile-options {
