@@ -15,6 +15,7 @@ function Home({setActiveAction}){
         <p>There's nothing much to show for now</p>
         <p>See <span className="link" onClick={()=>goTo('how-it-works')}>how it works</span></p>
         <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
+        <p><span className="link" onClick={()=>goTo('sample-test-results')}>sample results</span></p>
         <p><span className="link" onClick={()=>goTo('test-it')}>test it</span></p>
         <div id="btn-container">
           <Button classList={["get-started-btn"]} message="Get Started" onClick={()=>goTo('get-started')}/>
