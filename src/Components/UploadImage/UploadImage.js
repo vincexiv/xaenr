@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { apiHost } from "../../variables";
 import "./UploadImage.css"
 
@@ -33,13 +33,26 @@ function UploadImage({setResults}){
         }
 
         dropArea.addEventListener('drop', handleDrop, false)
-
-        function handleDrop(e) {
-          uploadFiles(getUploadedFiles(e))
+    
+        function previewFiles(files) {
+          try{
+            [...(files)].forEach(file=>{
+              const reader = new FileReader()
+              reader.readAsDataURL(file)
+              reader.onloadend = function() {
+                const img = document.createElement('img')
+                img.src = reader.result
+                document.getElementById('gallery').appendChild(img)
+              }
+            })
+          }catch (err){
+            console.warn(err)
+            return false
+          }
+          return true
         }
 
-        function uploadFiles(imageFiles) {
-          console.log("image file: ", imageFiles)
+        function uploadImageFiles(imageFiles) {
           fetch(`${apiHost}/get-match`, {
             method: 'POST',
             body: JSON.stringify({
@@ -58,14 +71,26 @@ function UploadImage({setResults}){
           })
           .catch(() => { /* Error. Inform the user */ })
         }
-    }, [])
+
+        function uploadAndPreviewFiles(files){
+          if(previewFiles(files)){
+            uploadImageFiles(files)
+          }
+        }
+
+        function handleDrop(e) {
+          const files = getUploadedFiles(e)
+          uploadAndPreviewFiles(files)
+        }
+
+        
+    }, [setResults])
 
     function getUploadedFiles(e){
       const dt = e.dataTransfer
       const files = dt.files
       return files
     }
-    
 
     return (
       <div id="upload-image">
@@ -75,6 +100,7 @@ function UploadImage({setResults}){
                 <input type="file" id="fileElem" multiple accept="image/*"/>
                 <label className="button" htmlFor="fileElem">Select files</label>
             </form>
+            <div id="gallery"></div>
         </div>
       </div>
     )
