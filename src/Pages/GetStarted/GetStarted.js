@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import UploadImage from "../../Components/UploadImage/UploadImage";
 import "./GetStarted.css"
 
-function GetStarted(){
+function GetStarted({setActiveAction}){
     const [results, setResults] = useState({available: true, data: {}})
 
     return (
@@ -36,6 +36,13 @@ function GetStarted(){
                         were mapped onto what parts of the images that exist in our database. 
                         This will aid in determining why a test has been considered positive 
                         or not
+                    </p>
+                    <p>
+                        For now, we are still on prototype stage. You can test the algorithm
+                        <span onClick={()=>setActiveAction("test-it")}> here</span>. 
+                        Also, you can find sample result for testing the 
+                        prototype <span onClick={()=>setActiveAction("sample-test-results")}> 
+                        in this page</span>
                     </p>
                 </div>
             </div>

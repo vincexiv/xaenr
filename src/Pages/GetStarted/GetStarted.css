@@ -16,6 +16,11 @@
     margin-bottom: 0.5rem;
 }
 
+#get-started span {
+    color: green;
+    cursor: pointer;
+}
+
 #get-started.results-available #get-started-items{
     width: 100%;
     display: flex;

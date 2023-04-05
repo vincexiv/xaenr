@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/how-it-works" element={<HowItWorks />} />
           <Route exact path="/how-to-test-it" element={<HowToTestIt />} />
           <Route exact path="/test-it" element={<TestIt setActiveAction={setActiveAction}/>} />
-          <Route exact path="/get-started" element={<GetStarted />} />
+          <Route exact path="/get-started" element={<GetStarted setActiveAction={setActiveAction}/>} />
           <Route exact path="/contact-info" element={<ContactInfo />} />
           <Route exact path="/sample-test-results" element={<SampleTestResults />} />
           <Route path="/" element={<Home setActiveAction={setActiveAction} />} />
