@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import { apiHost } from "../../variables";
 import "./UploadImage.css"
 
@@ -35,15 +35,15 @@ function UploadImage(){
         dropArea.addEventListener('drop', handleDrop, false)
 
         function handleDrop(e) {
-            const files = e.dataTransfer.files
-            ([...files]).forEach(uploadFile)
+          uploadFiles(getUploadedFiles(e))
         }
 
-        function uploadFile(imageFile) {
+        function uploadFiles(imageFiles) {
+          console.log("image file: ", imageFiles)
           fetch(`${apiHost}/get-match`, {
             method: 'POST',
             body: JSON.stringify({
-              ref_sample: imageFile,
+              ref_sample: imageFiles,
               test_samples: []
             })
           })
@@ -51,13 +51,19 @@ function UploadImage(){
           .catch(() => { /* Error. Inform the user */ })
         }
     }, [])
+
+    function getUploadedFiles(e){
+      const dt = e.dataTransfer
+      const files = dt.files
+      return files
+    }
     
 
     return (
         <div id="drop-area">
             <form className="my-form">
                 <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-                <input type="file" id="fileElem" multiple accept="image/*" />
+                <input type="file" id="fileElem" multiple accept="image/*"/>
                 <label className="button" htmlFor="fileElem">Select some files</label>
             </form>
         </div>
