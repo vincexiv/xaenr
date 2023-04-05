@@ -1,0 +1,19 @@
+#get-started.container{
+    height: 90vh;
+}
+
+#get-started.container.results-available {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#get-started:not(.results-available) {
+    display: grid;
+    place-items: center;
+}
+
+#get-started:not(.results-available) #results {
+    display: none;
+}

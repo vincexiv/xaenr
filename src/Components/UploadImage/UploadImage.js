@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { apiHost } from "../../variables";
 import "./UploadImage.css"
 
-function UploadImage(){
+function UploadImage({setResults}){
     useEffect(()=>{
 
         const dropArea = document.getElementById('drop-area')
@@ -47,7 +47,15 @@ function UploadImage(){
               test_samples: []
             })
           })
-          .then(() => { /* Done. Inform the user */ })
+          .then(res => {
+            if(res.ok){
+              res.json().then(data => {
+                setResults({available: true, data: data})
+              })
+            }else {
+              res.json().then(error => console.warn(error))
+            }
+          })
           .catch(() => { /* Error. Inform the user */ })
         }
     }, [])
