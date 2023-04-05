@@ -60,6 +60,7 @@ function UploadImage(){
     
 
     return (
+      <div id="upload-image">
         <div id="drop-area">
             <form className="my-form">
                 <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
@@ -67,6 +68,7 @@ function UploadImage(){
                 <label className="button" htmlFor="fileElem">Select some files</label>
             </form>
         </div>
+      </div>
     )
 }
 

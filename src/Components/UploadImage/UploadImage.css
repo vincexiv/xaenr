@@ -1,49 +1,51 @@
-#drop-area {
-    border: 2px dashed #ccc;
+#upload-image #drop-area {
+    border: 2px dashed var(--color-light);
     border-radius: 20px;
     width: 480px;
     font-family: sans-serif;
     margin: 100px auto;
     padding: 20px;
-  }
+}
 
-  #drop-area.highlight {
-    border-color: green;
-  }
+#upload-image #drop-area.highlight {
+  border-color: green;
+}
 
-  p {
-    margin-top: 0;
-  }
+#upload-image  p {
+  margin-top: 0;
+  color: var(--color-light);
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
 
-  .my-form {
-    margin-bottom: 10px;
-  }
+#upload-image .my-form {
+  margin-bottom: 10px;
+}
 
-  #gallery {
-    margin-top: 10px;
-  }
+#upload-image  #gallery {
+  margin-top: 10px;
+}
 
-  #gallery img {
-    width: 150px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
+#upload-image  #gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 
-  .button {
-    display: inline-block;
-    padding: 10px;
-    background: #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+#upload-image .button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-  .button:hover {
-    background: #ddd;
-  }
+#upload-image  .button:hover {
+  background: #ddd;
+}
 
-  #fileElem {
-    display: none;
-  }
-  
+#upload-image  #fileElem {
+  display: none;
+}
