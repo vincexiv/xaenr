@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { apiHost } from "../../variables";
 import "./UploadImage.css"
 
-function UploadImage({setResults}){
+function UploadImage({setResults }){
     useEffect(()=>{
 
         const dropArea = document.getElementById('drop-area')
@@ -94,7 +94,7 @@ function UploadImage({setResults}){
 
     return (
       <div id="upload-image">
-        <div id="drop-area">
+        <div id="drop-area" >
             <form className="my-form">
                 <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
                 <input type="file" id="fileElem" multiple accept="image/*"/>

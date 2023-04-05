@@ -1,7 +1,6 @@
 #upload-image #drop-area {
     border: 0.125rem dashed var(--color-light);
     border-radius: 1.25rem;
-    width: min(50rem, 80vw);
     font-family: sans-serif;
     margin: 6.25rem auto;
     padding: 1.25rem;

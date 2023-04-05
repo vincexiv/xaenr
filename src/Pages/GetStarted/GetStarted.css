@@ -1,8 +1,10 @@
 #get-started.container{
     height: 90vh;
+    width: calc(min(80vw, 95rem));
+    color: var(--color-light);
 }
 
-#get-started.container.results-available {
+#get-started.container.results-available #get-started-items{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,4 +18,9 @@
 
 #get-started:not(.results-available) #results {
     display: none;
+}
+
+#get-started.results-available #uploaded-images-and-upload-btn,
+#get-started.results-available #results {
+    width: min(40rem, 80vw);
 }
