@@ -33,10 +33,19 @@ function SampleTestResults(){
                 another image that makes those pieces close again.
             </p>
 
-            <ul>
-                <li><img src="/Images/image-1.png"/></li>
-                <li><img src="/Images/image-2.png"/></li>
-                <li><img src="/Images/image-3.png"/></li>
+            <ul id="sample-result-list">
+                <li>
+                    <p>Which of the remaining two look like the first one?</p>
+                    <img src="/Images/image-1.png"/>
+                </li>
+                <li>
+                    <p>Which of the remaining two look like the second one?</p>
+                    <img src="/Images/image-2.png"/>
+                </li>
+                <li>
+                    <p>Which of the remaining two look like the last one?</p>
+                    <img src="/Images/image-3.png"/>
+                </li>
             </ul>
         </div>
     )
