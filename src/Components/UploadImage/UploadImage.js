@@ -73,7 +73,7 @@ function UploadImage({setResults}){
             <form className="my-form">
                 <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
                 <input type="file" id="fileElem" multiple accept="image/*"/>
-                <label className="button" htmlFor="fileElem">Select some files</label>
+                <label className="button" htmlFor="fileElem">Select files</label>
             </form>
         </div>
       </div>
