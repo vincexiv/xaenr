@@ -4,13 +4,6 @@ import "./SampleTestResults.css"
 
 
 function SampleTestResults({setActiveAction}){
-    const navigate = useNavigate()
-    const images = [
-        "https://drive.google.com/file/d/1f7kvsRiIjj4Yq2WAiWVGK4q9Ndk67Q7v/view?usp=sharing",
-        "https://drive.google.com/file/d/1Z0eLYQnYKwYPardQUmqI_K5ONchvP4ex/view?usp=sharing",
-        "https://drive.google.com/file/d/1f7kvsRiIjj4Yq2WAiWVGK4q9Ndk67Q7v/view?usp=sharing"
-    ]
-
     return (
         <div id="sample-test-results" className="container">
             <h1>Sample Results</h1>
