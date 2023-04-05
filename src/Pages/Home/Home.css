@@ -28,9 +28,21 @@
     margin-bottom: 1.5rem;
 }
 
+#home #btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 #home p {
     text-align: right;
     margin: 0.5rem;
+}
+
+#home .get-started-btn {
+    justify-self: right;
+    margin: 0.5rem;
+    margin-top: 1rem;
 }
 
 #home .link {

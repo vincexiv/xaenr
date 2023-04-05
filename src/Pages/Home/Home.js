@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../Components/Button/Button";
 import "./Home.css"
 
 function Home({setActiveAction}){
@@ -15,6 +16,9 @@ function Home({setActiveAction}){
         <p>See <span className="link" onClick={()=>goTo('how-it-works')}>how it works</span></p>
         <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
         <p><span className="link" onClick={()=>goTo('test-it')}>test it</span></p>
+        <div id="btn-container">
+          <Button classList={["get-started-btn"]} message="Get Started" onClick={()=>goTo('get-started')}/>
+        </div>
       </div>
     </div>
   )
