@@ -35,15 +35,22 @@
 
 #upload-image .button {
   display: inline-block;
-  padding: 10px;
-  background: #ccc;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  min-width: max-content;
+  background-color: var(--primary-btn-color);
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color-light);
+  font-weight: 900;
 }
 
 #upload-image  .button:hover {
-  background: #ddd;
+  opacity: 0.8;
 }
 
 #upload-image  #fileElem {
