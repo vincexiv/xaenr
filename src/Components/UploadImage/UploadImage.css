@@ -1,10 +1,10 @@
 #upload-image #drop-area {
-    border: 2px dashed var(--color-light);
-    border-radius: 20px;
-    width: 480px;
+    border: 0.125rem dashed var(--color-light);
+    border-radius: 1.25rem;
+    width: min(30rem, 80vw);
     font-family: sans-serif;
-    margin: 100px auto;
-    padding: 20px;
+    margin: 6.25rem auto;
+    padding: 1.25rem;
 }
 
 #upload-image #drop-area.highlight {
@@ -20,17 +20,17 @@
 }
 
 #upload-image .my-form {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 #upload-image  #gallery {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 #upload-image  #gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
+  width: min(9.375rem, 31.25vw);
+  margin-bottom: 0.625rem;
+  margin-right: 0.625rem;
   vertical-align: middle;
 }
 
