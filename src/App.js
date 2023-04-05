@@ -7,6 +7,7 @@ import HowItWorks from './Pages/HowItWorks/HowItWorks';
 import HowToTestIt from './Pages/HowToTestIt/HowToTestIt';
 import TestIt from './Pages/TestIt/TestIt';
 import ContactInfo from './Pages/ContactInfo/ContactInfo';
+import GetStarted from './Pages/GetStarted/GetStarted';
 
 function App() {
   const navigate = useNavigate()
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/how-it-works" element={<HowItWorks />} />
           <Route exact path="/how-to-test-it" element={<HowToTestIt />} />
           <Route exact path="/test-it" element={<TestIt setActiveAction={setActiveAction}/>} />
+          <Route exact path="/get-started" element={<GetStarted />} />
           <Route exact path="/contact-info" element={<ContactInfo />} />
           <Route path="/" element={<Home setActiveAction={setActiveAction} />} />
       </Routes>
