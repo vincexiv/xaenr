@@ -24,7 +24,8 @@ body {
 
 .container {
   margin: auto;
-  max-width: calc(min(95vw, 95rem));
+  /* max-width: calc(min(95vw, 95rem)); */
+  width: calc(min(80vw, 95rem));
   padding: 1rem;
   min-height: max-content;
 }
