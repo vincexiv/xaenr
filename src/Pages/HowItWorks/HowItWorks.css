@@ -1,6 +1,7 @@
 #how-it-works.container {
     height: 90vh;
     display: flex;
+    gap: 2rem;
     justify-content: space-between;
 }
 
@@ -12,4 +13,21 @@
 #how-it-works iframe {
     border: none;
     outline: none;
+    width: 80%;
+    height: 100%;
+}
+
+@media only screen and (max-aspect-ratio: 1){
+    #how-it-works.container {
+        flex-direction: column;
+    }
+
+    #how-it-works.container #more-info {
+        color: white;
+        padding-top: 2rem;
+    }
+
+    #how-it-works iframe {
+        width: 100%;
+    }
 }
