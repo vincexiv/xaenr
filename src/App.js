@@ -9,6 +9,7 @@ import TestIt from './Pages/TestIt/TestIt';
 import ContactInfo from './Pages/ContactInfo/ContactInfo';
 import GetStarted from './Pages/GetStarted/GetStarted';
 import SampleTestResults from './Pages/SampleTestResults/SampleTestResults';
+import Intuition from './Pages/Intuition/Intuition';
 
 function App() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ function App() {
 
   useEffect(()=>{
     navigate(activeAction)
-  }, [activeAction])
+  }, [activeAction, navigate])
 
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
       <Routes>
           <Route exact path="/home" element={<Home setActiveAction={setActiveAction}/>} />
           <Route exact path="/how-it-works" element={<HowItWorks />} />
+          <Route exact path="/intuition" element={<Intuition />} />
           <Route exact path="/how-to-test-it" element={<HowToTestIt />} />
           <Route exact path="/test-it" element={<TestIt setActiveAction={setActiveAction}/>} />
           <Route exact path="/get-started" element={<GetStarted setActiveAction={setActiveAction}/>} />

@@ -14,6 +14,7 @@ function Home({setActiveAction}){
         <h1 id="welcome-to-xaenr">Welcome to Xaenr</h1>
         <p>There's nothing much to show for now</p>
         <p>See <span className="link" onClick={()=>goTo('how-it-works')}>how it works</span></p>
+        <p><span className="link" onClick={()=>goTo('intuition')}>intuition</span></p>
         <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
         <p><span className="link" onClick={()=>goTo('sample-test-results')}>sample results</span></p>
         <p><span className="link" onClick={()=>goTo('test-it')}>test it</span></p>

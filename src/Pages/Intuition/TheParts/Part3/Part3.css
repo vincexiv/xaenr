@@ -1,0 +1,7 @@
+.three-by-three-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: max(20vw, 30rem);
+
+}
