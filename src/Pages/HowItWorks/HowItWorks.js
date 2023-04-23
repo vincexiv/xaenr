@@ -15,8 +15,6 @@ function HowItWorks(){
             <iframe
                 title="how-it-works-iframe"
                 src="./HowItWorks.html"
-                // width={"80%"}
-                // height={"100%"}
                 >
             </iframe>
             
