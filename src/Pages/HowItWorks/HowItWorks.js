@@ -13,6 +13,7 @@ function HowItWorks(){
             </div>
 
             <iframe
+                loading="lazy"
                 title="how-it-works-iframe"
                 src="./HowItWorks.html"
                 >
