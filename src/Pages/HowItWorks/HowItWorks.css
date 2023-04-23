@@ -1,3 +1,8 @@
 #how-it-works.container {
     height: 90vh;
 }
+
+#how-it-works iframe {
+    border: none;
+    outline: none;
+}

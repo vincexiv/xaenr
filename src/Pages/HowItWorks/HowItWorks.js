@@ -9,7 +9,8 @@ function HowItWorks(){
             <iframe
                 src="./HowItWorks.html"
                 width={"100%"}
-                height={"100%"}>
+                height={"100%"}
+                >
             </iframe>
             
         </div>
