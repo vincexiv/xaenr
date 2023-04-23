@@ -1,8 +1,0 @@
-#how-it-works--part-6 .the-pieces,
-#how-it-works--part-6 .solution-sample
- {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem;
-}
