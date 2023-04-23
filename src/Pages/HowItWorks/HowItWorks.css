@@ -1,5 +1,12 @@
 #how-it-works.container {
     height: 90vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#how-it-works.container #more-info {
+    color: white;
+    padding-top: 10rem;
 }
 
 #how-it-works iframe {
