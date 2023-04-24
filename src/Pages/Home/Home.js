@@ -20,7 +20,7 @@ function Home({setActiveAction}){
         <p><span className="link" onClick={()=>goTo('sample-test-results')}>sample results</span></p>
         <p><span className="link" onClick={()=>goTo('test-it')}>test it</span></p>
         <div id="btn-container">
-          <Button classList={["get-started-btn"]} message="Get Started" onClick={()=>goTo('get-started')}/>
+          <Button classList={["get-started-btn"]} message="Get Started" onClick={()=>goTo('how-it-works')}/>
         </div>
       </div>
     </div>
