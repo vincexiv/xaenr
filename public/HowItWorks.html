@@ -14277,7 +14277,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So, I came up with an algorithm for image recognition that doesn't involve any learning or modeling. I wrote about the intuition behind everything I was doing, which you can find in the <a href="https://xaenr.com/how-it-works">how it works</a>. It is not yet completed it yet but I will soon. If you went through it, you have an idea about the theory behind the approach.</p>
+<p> We are working on a one-shot image recognition algorithm that is explainable by design. So far, the first phase is almost done. In this part I focused mainly on it working on small dataset such as those of MNIST digits and the random doodles I drew from the <a href="https://www.xaenr.com/test-it" target="_parent"> test it part</a>. The next phase is scaling it such that it would work with bigger images. That said, you might also want to checkout <a href="https://xaenr.com/intuition" target="_parent"> the intuition behind it</a></p>
 <p>In this discussion, I will be taking you through the classes, and the methods that you could use to experiment on what I have done and hopefully add or modify a few things to make it more robust, efficient, and able to handle bigger images</p>
 <p>In summary, the whole thing was done using the following steps;</p>
 <ol>
@@ -14582,7 +14582,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Recall from <a href="https://xaenr.com/how-it-works">this discussion</a> that I need to make the elements related in a way that forces them to be mapped in a new image to regions that keep them as close as they were in the original image. One of the things that I did to enable this is through transforming element values by calculating "angle".</p>
+<p>Recall from <a href="https://xaenr.com/intuition" target="_parent">this discussion</a> that I need to make the elements related in a way that forces them to be mapped in a new image to regions that keep them as close as they were in the original image. One of the things that I did to enable this is through transforming element values by calculating "angle".</p>
 <p>Another thing that happens here is that I am discarding all elements that are not an edge. These elements do not provide any information, and discarding them reduces the procesing power needed to perform the later stages</p>
 <p>The class <strong>Sample</strong> from <em>sample_class_module</em> provides a lot of functionalities for this. Here are some of the examples</p>
 
@@ -14650,7 +14650,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>There's also a method to show to show the distribution of the orientation values above. From the figure below, we can see that most of the elements have a diagonal orientation (around 50). An orientation value of 1 represents vertical, while 0 means it is horizontal. In that regard, we also see that there are more elements with a horizontal orientation compared to those with vertical ones</p>
-<p>If you are interested in the whys and hows regarding my calculations of the orientation, check out <a href="https://github.com/VinceXIV/x--arctan-test">this</a> and <a href="https://github.com/VinceXIV/x--arctan-test-2">this</a> repos</p>
+<p>If you are interested in the whys and hows regarding my calculations of the orientation, check out <a href="https://github.com/VinceXIV/x--arctan-test" target="_parent">this</a> and <a href="https://github.com/VinceXIV/x--arctan-test-2" target="_parent">this</a> repos</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15077,7 +15077,7 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now think of the array of numbers as array of perspectives; $[p_1, p_2, ..., p_n]$. See the <strong>Perspective</strong> object from the <em>perspective_module</em> to see what it means to find the distance between two perpectives. Regarding finding the best match while mapping I used the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a></p>
+<p>Now think of the array of numbers as array of perspectives; $[p_1, p_2, ..., p_n]$. See the <strong>Perspective</strong> object from the <em>perspective_module</em> to see what it means to find the distance between two perpectives. Regarding finding the best match while mapping I used the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm" target="_parent">Hungarian algorithm</a></p>
 
 </div>
 </div>
@@ -15195,7 +15195,7 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Of the purple elements, there is one that matches the ref element the most based on the principles I discussed <a href="https://xaenr.com/how-it-works">here</a>.</p>
+<p>Of the purple elements, there is one that matches the ref element the most based on the principles I discussed <a href="https://xaenr.com/intuitiontarget="_parent">here</a>.</p>
 <p>The <strong>Compare</strong> objects has various methods to get the distance between the two perspective showing how similar or different they are. These methods include <em>getAverageCost</em>, <em>getMedianCost</em>, etc. Please explore the <strong>Compare</strong> class from <em>compare_module</em></p>
 
 </div>
@@ -15495,7 +15495,7 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As you can see from the result above, digits 4 and 9 are not as close to each other as 7 and 7 we got from above. That said, the primary approach to comparing that I did was getting the matching pattern.</p>
-<p>By design, the algorithm works by mapping elements from one sample to another to determine the best match using the principles I discussed <a href="https://xaenr.com/how-it-works">in the how it works page (Xaenr)</a>. The stuff I did such as creating orientations/angles above, and creating perspective was to force the best match to have elements mapped to regions in another sample where most of its neighbors in its original sample have been mapped.</p>
+<p>By design, the algorithm works by mapping elements from one sample to another to determine the best match using the principles I discussed <a href="https://xaenr.com/intuition" target="_parent">in the Intuition page (Xaenr)</a>. The stuff I did such as creating orientations/angles above, and creating perspective was to force the best match to have elements mapped to regions in another sample where most of its neighbors in its original sample have been mapped.</p>
 <p>Let's take a look at mapping in comp</p>
 
 </div>
@@ -15961,7 +15961,8 @@ $$
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>
   In this demonstration, I have been using MNIST digits. in the <span> test it page </span>, I encouraged doodling 
-  stuff. That's for the start. At the end, we will be working with full images
+  stuff just so you know there isn't any modeling going on. That's for the start and it was largely for the first phase of 
+  the project. In the next stage, we will be focusing on scaling it so it could be used for larger images, which is the ultimate goal
 </p>
 
 <p>
