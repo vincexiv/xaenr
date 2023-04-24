@@ -2,3 +2,8 @@
     display: grid;
     place-items: center;
 }
+
+#how-to-test-it-section iframe {
+    border: none;
+    outline: none;
+}
