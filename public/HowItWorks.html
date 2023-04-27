@@ -15114,10 +15114,10 @@ mapped to regions in another sample in such a way that they are, again, close to
   </p>
   <p>Since we need the total cost to be the least it could be, we won't just be doing guess work like we have done above</p>
 <p>The solution to the above problem is by mapping 1 from the first array to 2 in the second, 2 from the first to 3 in the second, etc. Generally, the optimal mapping is as follows;</p>
-<p>$1 \rightarrow 2 $<br> 
-$2 \rightarrow 3 $<br>
-$3 \rightarrow 4 $<br>
-$4 \rightarrow 5$</p>
+<p>$2 \rightarrow 2 $<br> 
+$3 \rightarrow 3 $<br>
+$4 \rightarrow 4 $<br>
+$5 \rightarrow 1 $</p>
 
 </div>
 </div>
@@ -15125,7 +15125,16 @@ $4 \rightarrow 5$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p> The mapping above can easily be obtained by simply feeding the table of distances I showed previously to the 
   <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>. Given the mapping above, 
-  the total cost of = 4, which is the optimal solution</p>
+  the total cost = 4, which is the optimal solution</p>
+  <p>Another solution to the above problem is; </p>
+  <p>$1 \rightarrow 2 $<br> 
+    $2 \rightarrow 3 $<br>
+    $3 \rightarrow 4 $<br>
+    $4 \rightarrow 5 $</p>
+<p>They can both be interpreted differently. For the first, the $5 \arrowright 1$ considered not a match, while the 
+  rest are perfect match. As for the second scenario, the second array is simply the same as array 1 with a transformation 
+  applied
+</p>
 <p>Any different mapping and the total cost would likely be higher than 4</p>
 
 </div>
