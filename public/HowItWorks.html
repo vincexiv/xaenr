@@ -14281,23 +14281,23 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p> We are working on a one-shot image recognition algorithm that is explainable by design. If you are interested in contributing to this project, please read along.</p>
-<p>So far, the first phase is almost done. In this part I focused mainly on it working on small dataset such as those of MNIST digits and the random doodles I drew from the <a href="https://www.xaenr.com/test-it" target="_parent"> test it part</a>. Visit <a href="https://www.xaenr.com/how-to-test-it" target="_parent"> this page </a> to
-   get an idea on how to draw random stuff and get the algorithm to distinguish them.
-   The next phase is scaling it such that it would work with bigger images. That said, you might also want to checkout <a href="https://xaenr.com/intuition" target="_parent"> the intuition behind it</a></p>
-<p>In this discussion, I will be taking you through the classes, and the methods that you could use to experiment on what I have done and hopefully add or modify a few things to make it more robust, efficient, and able to handle bigger images</p>
-<p>In summary, the whole thing was done using the following steps;</p>
+<p> We are building a one-shot image recognition algorithm that is explainable by design. If you are interested in contributing to this project, please read along.</p>
+<p>So far, the first phase is almost done. In this part, I mainly focused on getting the algorithm to work on small dataset such as MNIST digits and the random doodles from the <a href="https://www.xaenr.com/test-it" target="_parent"> test it page </a>. If you are curious about how to submit samples for test, visit <a href="https://www.xaenr.com/how-to-test-it" target="_parent"> this page</a>.
+</p>
+<p>The next phase is scaling the project's capability such that it would work with bigger images.</p>
+<p>In this discussion, I will be taking you through the classes, and the methods that you could use to experiment on what I have done and assuming you will be interested in contributing, add or modify a few things to make it more robust, efficient, and able to handle bigger images</p>
+<p>The content provided here is broken down into four parts;</p>
 <ol>
 <li>Get a two dimensional array to represent the sample</li>
 <li>Transform the element values in the array</li>
 <li>Generate an array of Perspectives corresponding to the original sample</li>
-<li>Compare the arrays of perspectives. This is analogous to comparing two samples</li>
+<li>Compare the arrays of perspectives. This is analogous to comparing the two samples</li>
 </ol>
-<p>Throughout this discussion, you'll notice I'll be using terms such as "sample", "element", among other terms a lot. Here's their definition;</p>
+<p>Throughout this discussion, I'll be using terms such as "sample", "element" a lot. Here's their definition;</p>
 <ul>
 <li><strong>sample</strong>: a two dimensional array of numbers. Could be obtained from a picture or any other source</li>
-<li><strong>element</strong>: a point in the two dimensional array I have mentioned above. An example of an element is (1, 1)</li>
-<li><strong>angle</strong>: I have used angle and orientation interchangeably. Whenever you see "angle" think of orientation, as it only shows how verticle or horizontal an element is</li>
+<li><strong>element</strong>: a point in the two dimensional array. An example of an element is (1, 1)</li>
+<li><strong>angle</strong>: I have used angle and orientation interchangeably. Whenever you see "angle" think of orientation. The "angle" as used in this work only shows how horizontal or vertical an element is. It makes no distinction of an angle being $45^\circ$ or $135^\circ$. Both are treated the same. I did that to make the algorithm robust with respect to image rotation</li>
 </ul>
 
 </div>
@@ -14310,7 +14310,10 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>There's nothing much to say here.</p>
-<p>For the website, these were the doodles. Soon, it will be big images. For testing, I used MNIST digits extensively. I developed two classes; <strong>Digit</strong> from <em>digits_module</em> that uses data from MNIST and <strong>Sample</strong> from <em>sample_class_module</em>.</p>
+<p>For the website, these were the doodles. Soon, it will be big images. For testing, I used MNIST digits extensively.
+  I developed two classes; <strong>Digit</strong> from <em>digits_module</em> that uses data from MNIST and 
+  <strong>Sample</strong> from <em>sample_class_module</em>. The <strong>Digit</strong> class was mainly used for testing 
+and its use may not be needed past the first phase. Still, it will be heavily discussed here.</p>
 
 </div>
 </div>
@@ -14456,22 +14459,23 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We will be using the two-dimensional array for the rest of the process though, so that's really what we need. Here, I extract the two dimensional array.set</p>
-<p>I should mention that I have created a lot of methods such as the <em>Digit.show()</em> used above just to guide in viewing what is currently being done. We can use that to judge whether whatever we are doing is providing the kind of results we were expecting</p>
+<p>I should mention that I have created a lot of methods such as the <em>Digit.show()</em> 
+  used above so that anybody using the classes I created can have a visual representation of what they are doing. 
+This is useful for examining the accuracy or appropriateness of whatever is being implemented</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">digit_0</span> <span class="o">=</span> <span class="n">my_digit</span><span class="o">.</span><span class="n">get_digit_array</span><span class="p">()</span>
+<!-- <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> -->
+     <!-- <div class="CodeMirror cm-s-jupyter"> -->
+<!-- <div class=" highlight hl-ipython3"><pre><span></span><span class="n">digit_0</span> <span class="o">=</span> <span class="n">my_digit</span><span class="o">.</span><span class="n">get_digit_array</span><span class="p">()</span> -->
 <!-- <span class="n">digit_0</span> -->
-</pre></div>
+<!-- </pre></div> -->
 
-     </div>
-</div>
+     <!-- </div> -->
+<!-- </div> -->
 </div>
 </div>
 
@@ -14589,8 +14593,11 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Recall from <a href="https://xaenr.com/intuition" target="_parent">this discussion</a> that I need to make the elements related in a way that forces them to be mapped in a new image to regions that keep them as close as they were in the original image. One of the things that I did to enable this is through transforming element values by calculating "angle".</p>
-<p>Another thing that happens here is that I am discarding all elements that are not an edge. These elements do not provide any information, and discarding them reduces the procesing power needed to perform the later stages</p>
+<p>Recall from <a href="https://xaenr.com/intuition" target="_parent">this discussion</a> that I need to make the elements related in a way that forces them to be mapped in a new image to regions that keep them as close as they 
+  were in the original image. One of the things that I did to enable this is through transforming element values by calculating "angle". I have put 
+it in quotes because it actually means <strong>orientation</strong></p>
+<p>Another thing that happens here is that I am discarding all elements that are not an edge. These elements do not provide any information. 
+  Discarding them reduces computational resources I need for this work (Yaay!)</p>
 <p>The class <strong>Sample</strong> from <em>sample_class_module</em> provides a lot of functionalities for this. Here are some of the examples</p>
 
 </div>
@@ -14656,7 +14663,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There's also a method to show to show the distribution of the orientation values above. From the figure below, we can see that most of the elements have a diagonal orientation (around 50). An orientation value of 1 represents vertical, while 0 means it is horizontal. In that regard, we also see that there are more elements with a horizontal orientation compared to those with vertical ones</p>
+<p>There's also a method to show to show the distribution of the orientation values above. From the figure below, we can see that most of the elements have a diagonal orientation (around 50). An orientation value of 100 represents vertical, while 0 means it is horizontal. In that regard, we also see that there are more elements with a horizontal orientation compared to those with vertical ones</p>
 <p>If you are interested in the whys and hows regarding my calculations of the orientation, check out <a href="https://github.com/VinceXIV/x--arctan-test" target="_parent">this</a> and <a href="https://github.com/VinceXIV/x--arctan-test-2" target="_parent">this</a> repos</p>
 
 </div>
@@ -14701,7 +14708,12 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We could also thinify our samples. I did this this reduce the number of elements I have to work with because at this time the algorithm is computationally intensive, and that's one of the things I could do to reduce the operations that need to be performed. It is, however, not the ideal approach, and I'm still thinking of something to do so I could still work with the original</p>
+<p>We could also thinify our samples. I did this this reduce the number of elements I have to work with. 
+  One downside of doing this is that I lost information 
+  regarding the magnitude of "diagonalness" each elements were. By thinning, all elements are either vertical (orientation == 100), 
+  horizontal (orientation == 0), or diagonal (orientation == 50). All other values are, unfortunately, mapped into these three. I'm 
+  still working on ensuring this information is not lost
+</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14779,10 +14791,16 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <strong>Perspective</strong> object, like some of the objects discussed up to this point, has some methods that help us know what is going on. Here are a few</p>
+<p>The <strong>Perspective</strong> object, like some of the objects discussed up to this point, 
+  has some methods that help us know what is going on. Below, I demonstrate the <em> Perspective.showElement() </em> mehtod. 
+  Use this method to see the element used to create the perspective. It says "we are currently looking at the sample from the 
+  perspective of this element"
+</p>
+<p>The rest of the figures provide more methods offered by this object</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
@@ -14822,17 +14840,35 @@ a.anchor-link {
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+  <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <p>
+    Below, we see the <em>Perspective.showPerspective()</em> method in action. 
+    In the first figure, the dark purple colors are elements whose angle/orientation are close to the angle of our reference element. 
+    Reference element here means the element used to create the perspective object.
+    In the second figure, elements close to the reference element are purplish, while those further from it are yellow. We used the 
+    Euclidean distance for this. In the third image, elements lying on the orientation path of the reference element are purplish. By 
+    that I mean if there existed a line spanning the whole sample, passed through reference element, and had the same orientation as 
+    the element, all other elements lying on this line would be considered close to the reference element. Thus, their values would be 
+    purplish. The further they fall away from this line, the yellowish they become.
+  </p>
+  
+  </div>
+  </div>
+
+
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># In the first figure, the dark purple colors are elements whose angles are close to the angle of our reference element</span>
+<div class=" highlight hl-ipython3"><pre>
+  <!-- <span class="c1"># In the first figure, the dark purple colors are elements whose angles are close to the angle of our reference element</span>
 <span class="c1"># In the second figure, elements close to the reference element are purplish, while those further from it are yellow</span>
-<span class="c1"># In the third image, diagnonal elements relative to the reference element are purplish.</span>
+<span class="c1"># In the third image, elements lying on the orientation path relative to the reference element are purplish.</span>
 <span class="c1"># NOTE, in image 3 below, diagonal elements relative to the reference element are also diagonal, that is not always the case,</span>
-<span class="c1"># take a look at the perspective shown next to see what is going on</span>
-
+<span class="c1"># take a look at the perspective shown next to see what is going on</span> -->
 <span class="n">perspective1</span><span class="o">.</span><span class="n">showPerspective</span><span class="p">()</span>
 </pre></div>
 
@@ -14959,9 +14995,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>comparison is done by comparing all elements in one perspective against another to create a two dimensional array of cost, that show how much distance the two elements have between each other</p>
-<p>For instance, assume that our first array of elements is [1, 2, 3, 4], and the other one is [2, 3, 4, 5]. We want to match the items in the first array with that of the second such that no element has been mapped onto more than one element in the other array. For instance, if we map 1 in the first array to 2 in the second, we aren't allowed to map 1 to any other number in the second. We also need to ensure that the sum of difference is the least it could be.</p>
-<p>First we will create a two dimensional array that shows all the differences. I'll represent this using a pandas DataFrame for clarity's sake</p>
+<p>comparison is done by comparing all elements in one perspective against another to create a two dimensional array of 
+  cost that show how much distance the two elements have between themselves. Please note that we don't use the Euclidean 
+or any of the conventional methods of calculating distance. Rather, the calculation is informed by what I discussed 
+<a href="https://www.xaenr.com/intuition" target="_parent"> here. </a> Our goal is to force close elements in the original sample to be 
+mapped to regions in another sample in such a way that they are, again, close to each other. I'll use a small example here.</p>
+<p>Assume that our first array of elements is [1, 2, 3, 4], and the other one is [2, 3, 4, 5]. We want to match the items in the first array with that of the second such that no element has been mapped onto more than one element in the other array. For instance, if we map 1 in the first array to 2 in the second, we aren't allowed to map 1 to any other number in the second. We also need to ensure that the sum of difference is the least it could be.</p>
+<p>First we will create a two dimensional array that shows all the distances. I'll represent this using a pandas DataFrame for clarity's sake</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15066,6 +15106,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <p>
+    We can see that the distance between 1 and 2 is 1, the distance between 1 and 3 is 2, etc. Thus, if we map 1 to 3, our cost = 2. 
+    We now remain with [2, 3, 4] from the first array and [2, 4, 5] from the second array. From this array, we could again map 2 from the first 
+    array to 4 in the second. The distance between them is 2, and thus our total cost at this point = 4 (2 + 2).  We can go on like that until each item from 
+    the first has a "partner" from the second then calculate the total cost.
+  </p>
+  <p>Since we need the total cost to be the least it could be, we won't just be doing guess work like we have done above</p>
 <p>The solution to the above problem is by mapping 1 from the first array to 2 in the second, 2 from the first to 3 in the second, etc. Generally, the optimal mapping is as follows;</p>
 <p>$1 \rightarrow 2 $<br> 
 $2 \rightarrow 3 $<br>
@@ -15076,21 +15123,27 @@ $4 \rightarrow 5$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Witht he mapping above, the most optimal mapping has a total cost of = 4 calculated as follows; $\\$
-$abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} abs(3 - 4) \hspace{1mm} + \hspace{1mm} abs(4 - 5)$</p>
+<p> The mapping above can easily be obtained by simply feeding the table of distances I showed previously to the 
+  <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>. Given the mapping above, 
+  the total cost of = 4, which is the optimal solution</p>
 <p>Any different mapping and the total cost would likely be higher than 4</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now think of the array of numbers as array of perspectives; $[p_1, p_2, ..., p_n]$. See the <strong>Perspective</strong> object from the <em>perspective_module</em> to see what it means to find the distance between two perpectives. Regarding finding the best match while mapping I used the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm" target="_parent">Hungarian algorithm</a></p>
+<p>Now think of the array of numbers as array of perspectives; $[p_1, p_2, ..., p_n]$. 
+  Thus, the distance between elements is actually the distance between the perspectives, since each of the perspective can be represented 
+  by the element that created it. The table of distance between perspectives can be obtianed from the <strong>Compare</strong> object that is returned by the 
+   <em>Perspective.compare()</em> method that I will be demonstrating shortly. We can then simply feed the table into the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a> 
+   to get the optimal mapping.
+</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>When we compare two perspectives, the result is another object of type <strong>Compare</strong> that also offers methods for examining the comparison results. Here's what I am talking about. One of the interesting methods it offers is the ability to see what element in the sample matched it the most. This is available through the <em>Compare.showMatch()</em> method. Here is how to use it</p>
+<p>When we compare two perspectives, the result is another object of type <strong>Compare</strong> that also offers methods for examining the comparison results. One of the interesting methods it offers is the ability to see what element in the sample matched it the most. This is available through the <em>Compare.showMatch()</em> method. Here is how to use it</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15158,7 +15211,9 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The figure below provides a little perspective on what we've done so far. You can see where the element used to create the element is located. Use it to compare with what the algorithm thought would best match this element in the figure above</p>
+  <p>In the figure above, the more purple the element was colored, the more the algorithm thought it could be a good match for the 
+    reference element. The figure below shows the reference element to provide a little perspective to what I am talking about
+  </p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15202,7 +15257,6 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Of the purple elements, there is one that matches the ref element the most based on the principles I discussed <a href="https://xaenr.com/intuitiontarget="_parent">here</a>.</p>
 <p>The <strong>Compare</strong> objects has various methods to get the distance between the two perspective showing how similar or different they are. These methods include <em>getAverageCost</em>, <em>getMedianCost</em>, etc. Please explore the <strong>Compare</strong> class from <em>compare_module</em></p>
 
 </div>
@@ -15287,8 +15341,9 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So far, I have been rumbling about the <strong>Perspective</strong> object, and so I've said relatively nothing about the array of perspectives I was to talk about in this section. Well, with the information we have so far, all we need is to have a perspective for each of the element in that sample and our array of perspectives will be complete. I took care of that in the <strong>Associations</strong> object from the <em>associations_module</em></p>
-<p>There's more than the array of Perspectives in that object though if you've taken a look. There are two ways to compare samples in the associations module and that's by comparing an array of perspective against another, and the second method is through comparing the associations. Take a look at it to examine the diference</p>
+<p>So far, I have been rumbling about the <strong>Perspective</strong> object, and so I've said relatively nothing about the array of perspectives I was to talk about in this section. Well, with the information we have so far, all we need is to have a perspective for each of the element in a sample and our array of perspectives will be complete. I took care of that in the <strong>Associations</strong> object from the <em>associations_module</em></p>
+<p>There's more than the array of Perspectives in that object though if you've taken a look. There are two ways to compare samples in the associations module and that's by comparing an array of perspective against another, and the second method is through comparing the associations.
+  I won't be discussing that here though. Take a look at it to examine the diference</p>
 
 </div>
 </div>
@@ -15365,7 +15420,9 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here, I am examining what elements (read pixels) from assoc1 (sample1/image1) was matched into what elements of sample2. Since I was comparing the same elements (assoc1 == assoc2), you can see that all elements have been matched to themselves. element (9, 13) has been matched to (9, 13), (9, 14) has been matched to (9, 14), etc.</p>
+<p>Here, I am examining what elements from assoc1 was matched to what elements of assoc2. Since both assoc1 and assoc2 were created 
+  from the same sample, you can see that all elements have been matched to elements of same value. For instance, element (9, 13) has 
+  been matched to (9, 13), (9, 14) has been matched to (9, 14), etc.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15436,7 +15493,9 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now, I try to compare two digits different digits by creating <strong>Associations</strong> object using them as samples. You can see that the match results are not as shown above, different elements from one samples were matched with elements at different positions in the other samplem</p>
+<p>Now, let me compare two associations created from different samples and see what I get.</p>
+<p>You can see that the match result differ from what we have seen above. 
+  Different elements from one samples were matched with elements at different positions in the other sample</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15501,8 +15560,10 @@ $abs(1 - 2) \hspace{1mm} + \hspace{1mm} abs(2 - 3) \hspace{1mm} + \hspace{1mm} a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As you can see from the result above, digits 4 and 9 are not as close to each other as 7 and 7 we got from above. That said, the primary approach to comparing that I did was getting the matching pattern.</p>
-<p>By design, the algorithm works by mapping elements from one sample to another to determine the best match using the principles I discussed <a href="https://xaenr.com/intuition" target="_parent">in the Intuition page (Xaenr)</a>. The stuff I did such as creating orientations/angles above, and creating perspective was to force the best match to have elements mapped to regions in another sample where most of its neighbors in its original sample have been mapped.</p>
+<p>There is also a difference in median cost between the two associations indicating that the two samples differ 
+  considerably. That said, the primary approach to comparing that I did involved getting the matching pattern.</p>
+<p>By design, the algorithm works by mapping elements from one sample to another to determine the best match using the principles I discussed <a href="https://xaenr.com/intuition" target="_parent"> here </a>. 
+  The stuff I did such as creating orientations/angles and creating perspective was to force the best match to have elements mapped to regions in another sample where most of its neighbors in its original sample have been mapped.</p>
 <p>Let's take a look at mapping in comp</p>
 
 </div>
@@ -15638,7 +15699,7 @@ $$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>That said, I dealt with the original equation separately. I first converted them to be as shown below;</p>
+<p>To solve this equation, I used the following steps;</p>
 $$
 \begin{bmatrix}
 \beta_1x_1 &amp; + &amp; \beta_2y_1 \\
@@ -15743,7 +15804,8 @@ $\beta_1x_1$ + $\beta_2y_1$ + $\beta_0$ = $y_2$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The solutions above can be interpreted the normal way. For instance, we know that a tranformation $\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ \end{bmatrix}$ leaves the original element as is. That's what we'll get if the two images are exactly the same and no transformation has been performed. One thing that I haven't done yet that I should mention is that I haven't separated rotation and scaling. thus, the matrix $\begin{bmatrix} \beta_1 &amp; \beta_2 \\ \beta_3 &amp; \beta_4 \\ \end{bmatrix}$ contains information for both rotation and scaling. I will be separating them later on as I continue working on this. That said, we can examine associations created from similar samples to confirm whether we get the matrices we expected.</p>
+<p>The solutions above can be interpreted the normal way. For instance, we know that a tranformation $\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ \end{bmatrix}$ leaves the original element as is. That's what we'll get if the two images are exactly the same and no transformation has been performed. One thing that I haven't done yet that I should mention is that I haven't separated rotation and scaling. thus, the matrix $\begin{bmatrix} \beta_1 &amp; \beta_2 \\ \beta_3 &amp; \beta_4 \\ \end{bmatrix}$ contains information for both rotation and scaling. I will be separating them later on as I continue working on this.
+</p>
 <p>Recall from the sections above that we created <code>assoc1</code> and <code>assoc2</code> from digit 7. The <strong>Association</strong> object actually provides a method that tells us what sample it was created from. Let's confirm this</p>
 
 </div>
@@ -15982,21 +16044,14 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>
-  In this demonstration, I have been using MNIST digits. in the <span> test it page </span>, I encouraged doodling 
-  stuff just so you know there isn't any modeling going on. That's for the start and it was largely for the first phase of 
+  In this demonstration, I have been using MNIST digits. In the <a href="https://www.xaenr.com/test-it" target="_parent"> test it page</a>, I encouraged doodling random 
+  stuff just so you know there isn't any modeling going on. This is a start and we are almost completing the first phase of 
   the project. In the next stage, we will be focusing on scaling it so it could be used for larger images, which is the ultimate goal
 </p>
 
 <p>
   That's it for now. Thanks for reading through 😀.
 </p>
-<p>
-  Please head over to the <a href="https://github.com/VinceXIV/open-image" target="_parent">the github repo</a> to check the code for yourself and run the things I have been discussing in this notebook. You will also find information on how to contribute
-</p>
-<p>
-  Thanks again
-</p>
-
 </div>
 </div>
 </body>
