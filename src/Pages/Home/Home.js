@@ -28,15 +28,15 @@ function Home({setActiveAction}){
           <li>
             <p><span className="link" onClick={()=>goTo('intuition')}>intuition behind it</span></p>
           </li>
-          <li>
+          {/* <li>
             <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <p><span className="link" onClick={()=>goTo('sample-test-results')}>sample results</span></p>
           </li>
           <li>
             <p><span className="link" onClick={()=>goTo('test-it')}>test it</span></p>
-          </li>
+          </li> */}
         </ul>
         <div id="btn-container">
           <Button classList={["get-started-btn"]} message="Get Started" onClick={()=>goTo('how-it-works')}/>
