@@ -12,7 +12,7 @@ function HowItWorks(){
                     target="_blank"> this video </a> 
                     to find out a summary of how it works in practice 
                 </p>
-                <p>Find more of the work <a href="https://github.com/VinceXIV/open-image"
+                <p>Find more of the work <a href="https://github.com/Xaenr-com/open-image"
                     target={"_blank"}
                     className="link"
                     rel="noreferrer">on github</a>
