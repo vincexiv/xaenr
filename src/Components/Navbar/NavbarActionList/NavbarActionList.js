@@ -9,11 +9,11 @@ function NavbarActionList({activeAction, onClick}){
                 Home
             </li>
 
-            <li id='nav-content-get-started'
+            {/* <li id='nav-content-get-started'
                 className={activeAction === 'get-started'? 'active item': 'item'}
                 onClick={()=>onClick('get-started')}>
                 Get Started
-            </li>
+            </li> */}
 
             <li id='nav-content-how-it-works'
                 className={activeAction === 'how-it-works'? 'active item': 'item'}
