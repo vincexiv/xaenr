@@ -21,11 +21,11 @@ function NavbarActionList({activeAction, onClick}){
                 How It Works
             </li>
 
-            <li id='nav-content-how-to-test-it'
+            {/* <li id='nav-content-how-to-test-it'
                 className={activeAction === 'how-to-test-it'? 'active item': 'item'}
                 onClick={()=>onClick('how-to-test-it')}>
                 How to Test It
-            </li>
+            </li> */}
 
             <li id='nav-content-test-it'
                 className={activeAction === 'test-it'? 'active item': 'item'}
