@@ -25,12 +25,12 @@ function Home({setActiveAction}){
           <li>
             <p><span className="link" onClick={()=>goTo('how-it-works')}>how it works</span></p>
           </li>
-          <li>
-            <p><span className="link" onClick={()=>goTo('intuition')}>intuition behind it</span></p>
-          </li>
           {/* <li>
-            <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
+            <p><span className="link" onClick={()=>goTo('intuition')}>intuition behind it</span></p>
           </li> */}
+          <li>
+            <p><span className="link" onClick={()=>goTo('how-to-test-it')}>how to test it</span></p>
+          </li>
           {/* <li>
             <p><span className="link" onClick={()=>goTo('sample-test-results')}>sample results</span></p>
           </li>

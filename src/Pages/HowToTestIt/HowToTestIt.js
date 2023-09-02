@@ -21,11 +21,19 @@ function HowToTestIt(){
     return (
         <div id="how-to-test-it-section" className="container">
             <div className="wrapper">
-            <iframe src="https://drive.google.com/file/d/1g_6kL3ZdQG5PXfeGYaQhvrbrktxR6vMK/preview"
+            {/* <iframe src="https://www.youtube.com/watch?v=IvLfpaILdlY"
                     width={widthAndHeight.width}
                     height={widthAndHeight.height}
                     allow="autoplay">
-                </iframe>
+            </iframe> */}
+
+            <iframe
+                width={widthAndHeight.width}
+                height={widthAndHeight.height}
+                src="https://www.youtube.com/embed/IvLfpaILdlY?si=ois-UX85RHKx9b3H"
+                title="How to Test It"
+                frameborder="0"
+                allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     )

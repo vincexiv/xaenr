@@ -7,10 +7,13 @@ function HowItWorks(){
         <div id="how-it-works" className="container">
             <div id="more-info">
                 <p>
-                    Checkout <a href="https://www.youtube.com/watch?v=j656VXJ3udY"
+                    {/* Checkout <a href="https://www.youtube.com/watch?v=j656VXJ3udY"
+                    className="link"
+                    target="_blank"> this video </a>  */}
+                    Checkout <a href="https://youtu.be/IvLfpaILdlY"
                     className="link"
                     target="_blank"> this video </a> 
-                    to find out a summary of how it works in practice 
+                    to find out how to test it
                 </p>
                 <p>Find more of the work <a href="https://github.com/Xaenr-com/open-image"
                     target={"_blank"}
