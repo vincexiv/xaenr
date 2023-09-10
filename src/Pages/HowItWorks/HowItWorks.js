@@ -10,7 +10,7 @@ function HowItWorks(){
                     {/* Checkout <a href="https://www.youtube.com/watch?v=j656VXJ3udY"
                     className="link"
                     target="_blank"> this video </a>  */}
-                    Checkout <a href="https://youtu.be/IvLfpaILdlY"
+                    Checkout <a href="https://youtu.be/a9EtLw6IjTg?feature=shared"
                     className="link"
                     target="_blank"> this video </a> 
                     to find out how to test it
