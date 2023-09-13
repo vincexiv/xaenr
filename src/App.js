@@ -25,7 +25,8 @@ function App() {
     <>
       <Navbar activeAction={activeAction} setActiveAction={setActiveAction}/>
       <Routes>
-          <Route exact path="/home" element={<Home setActiveAction={setActiveAction}/>} />
+          {/* <Route exact path="/home" element={<Home setActiveAction={setActiveAction}/>} /> */}
+          <Route exact path="/home" element={<HowItWorks setActiveAction={setActiveAction}/>} />
           <Route exact path="/how-it-works" element={<HowItWorks />} />
           <Route exact path="/intuition" element={<Intuition />} />
           <Route exact path="/how-to-test-it" element={<HowToTestIt />} />
@@ -33,7 +34,7 @@ function App() {
           <Route exact path="/get-started" element={<GetStarted setActiveAction={setActiveAction}/>} />
           <Route exact path="/contact-info" element={<ContactInfo />} />
           <Route exact path="/sample-test-results" element={<SampleTestResults setActiveAction={setActiveAction} />} />
-          <Route path="/" element={<Home setActiveAction={setActiveAction} />} />
+          <Route path="/" element={<HowItWorks setActiveAction={setActiveAction} />} />
       </Routes>
     </>
   );

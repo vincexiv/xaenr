@@ -3,11 +3,11 @@ import React from "react";
 function NavbarActionList({activeAction, onClick}){
     return (
         <>
-            <li id='nav-content-home'
+            {/* <li id='nav-content-home'
                 className={activeAction === 'home'? 'active item': 'item'}
-                onClick={()=>onClick('home')}>
+                onClick={()=>onClick('how-it-works')}>
                 Home
-            </li>
+            </li> */}
 
             {/* <li id='nav-content-get-started'
                 className={activeAction === 'get-started'? 'active item': 'item'}
@@ -18,7 +18,7 @@ function NavbarActionList({activeAction, onClick}){
             <li id='nav-content-how-it-works'
                 className={activeAction === 'how-it-works'? 'active item': 'item'}
                 onClick={()=>onClick('how-it-works')}>
-                How It Works
+                Home
             </li>
 
             <li id='nav-content-how-to-test-it'
