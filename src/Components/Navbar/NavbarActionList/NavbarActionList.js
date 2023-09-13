@@ -33,11 +33,11 @@ function NavbarActionList({activeAction, onClick}){
                 Test It
             </li>
 
-            <li id='nav-content-contact-info'
+            {/* <li id='nav-content-contact-info'
                 className={activeAction === 'contact-info'? 'active item': 'item'}
                 onClick={()=>onClick('contact-info')}>
                 Contact Info
-            </li>
+            </li> */}
         </>
     )
 }
