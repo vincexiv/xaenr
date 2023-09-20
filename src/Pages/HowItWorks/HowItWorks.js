@@ -16,18 +16,23 @@ function HowItWorks(){
                     accomplished so far, visit the links provided below
                 </p>
                 <p>
-                    {/* Checkout <a href="https://www.youtube.com/watch?v=j656VXJ3udY"
+                    Checkout <a href="https://www.youtube.com/watch?v=j656VXJ3udY"
                     className="link"
-                    target="_blank"> this video </a>  */}
+                    target="_blank"> this video </a> to get a very rough watered-down version
+                    of the project.
+                </p>
+                <p>
                     Checkout <a href="https://youtu.be/a9EtLw6IjTg?feature=shared"
                     className="link"
                     target="_blank"> this video </a> 
-                    to find out how to test it
+                    to find out how to test the project. It is worth noting that it is not deployed 
+                    at this point so you will need to follow the processes outlined in the github 
+                    repo mentioned below to set it up on your machine and run it.
                 </p>
-                <p>Find more of the work <a href="https://github.com/Xaenr-com/open-image"
+                <p> Here is the github repo; <a href="https://github.com/Xaenr-com/open-image"
                     target={"_blank"}
                     className="link"
-                    rel="noreferrer">on github</a>
+                    rel="noreferrer">, you can use it to find out more about the code</a>
                 </p>
             </div>
 
