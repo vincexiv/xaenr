@@ -21,7 +21,7 @@ function NavbarActionList({activeAction, onClick}){
                 Home
             </li>
 
-            <li id='nav-content-how-to-test-it'
+            {/* <li id='nav-content-how-to-test-it'
                 className={activeAction === 'how-to-test-it'? 'active item': 'item'}
                 onClick={()=>onClick('how-to-test-it')}>
                 How to Test It
@@ -31,7 +31,7 @@ function NavbarActionList({activeAction, onClick}){
                 className={activeAction === 'test-it'? 'active item': 'item'}
                 onClick={()=>onClick('test-it')}>
                 Test It
-            </li>
+            </li> */}
 
             {/* <li id='nav-content-contact-info'
                 className={activeAction === 'contact-info'? 'active item': 'item'}
